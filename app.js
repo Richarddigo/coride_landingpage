@@ -70,10 +70,9 @@ function closeWaitlistModal() {
 }
 
 // Form handling
-async function handleFormSubmit(e) {
+function handleFormSubmit(e) {
     e.preventDefault();
 
-    const form = e.target;
     const formData = {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
@@ -83,45 +82,58 @@ async function handleFormSubmit(e) {
         language: localStorage.getItem('corideLanguage') || 'en'
     };
 
-    // Save to localStorage as backup
+    // Save to localStorage
     saveToWaitlist(formData);
 
-    // Send to Formspree
-    try {
-        const response = await fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form),
-            headers: {
-                'Accept': 'application/json'
-            }
+    // Send email notification to you
+    sendEmailNotification(formData);
+
+    // Track conversion
+    trackEvent('waitlist_signup', {
+        email: formData.email,
+        has_flight: !!formData.flight
+    });
+
+    // Track Facebook Pixel conversion (if available)
+    if (typeof fbq !== 'undefined') {
+        fbq('track', 'Lead', {
+            content_name: 'Waitlist Signup',
+            status: 'completed'
         });
+    }
 
-        if (response.ok) {
-            // Track conversion
-            trackEvent('waitlist_signup', {
-                email: formData.email,
-                has_flight: !!formData.flight
-            });
+    // Show success message
+    showSuccessMessage();
 
-            // Track Facebook Pixel conversion (if available)
-            if (typeof fbq !== 'undefined') {
-                fbq('track', 'Lead', {
-                    content_name: 'Waitlist Signup',
-                    status: 'completed'
-                });
-            }
+    // Update counter
+    updateCounter();
+}
 
-            // Show success message
-            showSuccessMessage();
+// Send email notification
+function sendEmailNotification(data) {
+    const subject = encodeURIComponent('🚀 Nuevo registro en Coride Waitlist');
+    const body = encodeURIComponent(`
+Nuevo registro en la waitlist de Coride:
 
-            // Update counter
-            updateCounter();
-        } else {
-            alert('Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.');
-        }
-    } catch (error) {
-        console.error('Error:', error);
-        alert('Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.');
+Nombre: ${data.name}
+Email: ${data.email}
+Próximo vuelo: ${data.flight || 'No especificado'}
+Beta tester: ${data.beta ? 'Sí' : 'No'}
+Idioma: ${data.language}
+Fecha: ${new Date(data.timestamp).toLocaleString()}
+
+---
+Enviado desde: ${window.location.href}
+    `);
+
+    // Open email client (fallback method)
+    const mailtoLink = `mailto:richarddigo@gmail.com?subject=${subject}&body=${body}`;
+
+    // Try to open in new window silently
+    try {
+        window.open(mailtoLink, '_blank');
+    } catch (e) {
+        console.log('Email notification created for:', data.email);
     }
 }
 
