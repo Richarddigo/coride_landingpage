@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Local - Coride</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #2563eb;
+        }
+
+        .success {
+            background: #d1fae5;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .warning {
+            background: #fef3c7;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .button {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 8px;
+            margin: 10px 10px 10px 0;
+        }
+
+        code {
+            background: #f1f5f9;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+
+        .checklist {
+            list-style: none;
+        }
+
+        .checklist li {
+            padding: 8px 0;
+        }
+
+        .checklist li:before {
+            content: "✓ ";
+            color: #10b981;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>✅ Coride Landing Page - Test Local</h1>
+
+    <div class="success">
+        <strong>🎉 ¡Éxito!</strong> Si ves esta página, los archivos están en su lugar.
+    </div>
+
+    <h2>📋 Archivos Creados</h2>
+    <ul class="checklist">
+        <li>index.html - Página principal</li>
+        <li>styles.css - Estilos</li>
+        <li>app.js - Funcionalidad JavaScript</li>
+        <li>translations.js - Sistema multiidioma (ES, EN, DE)</li>
+        <li>README.md - Documentación completa</li>
+        <li>DEPLOY.md - Guía de despliegue</li>
+    </ul>
+
+    <h2>🚀 Siguientes Pasos</h2>
+
+    <div class="warning">
+        <strong>⚠️ Importante:</strong> Esta es solo una página de prueba. Tu landing real está en <code>index.html</code>
+    </div>
+
+    <a href="index.html" class="button">🎯 Ver Landing Page Completa</a>
+
+    <h2>🔧 Probar Localmente</h2>
+    <p>Abre PowerShell en esta carpeta y ejecuta:</p>
+    <code style="display: block; padding: 15px; background: #1e293b; color: #fff; border-radius: 8px;">
+        python -m http.server 8000
+    </code>
+    <p>Luego abre: <a href="http://localhost:8000">http://localhost:8000</a></p>
+
+    <h2>📤 Subir a GitHub</h2>
+    <ol>
+        <li>Crea un repositorio en GitHub</li>
+        <li>En PowerShell ejecuta:
+            <pre style="background: #1e293b; color: #fff; padding: 15px; border-radius: 8px; overflow-x: auto;">git init
+git add .
+git commit -m "🚀 Coride MVP Landing"
+git branch -M main
+git remote add origin https://github.com/TU-USUARIO/coride-web.git
+git push -u origin main</pre>
+        </li>
+        <li>Activa GitHub Pages en Settings → Pages</li>
+    </ol>
+
+    <h2>📊 Características Implementadas</h2>
+    <ul>
+        <li><strong>Multiidioma:</strong> Selector de idioma (🇪🇸 🇬🇧 🇩🇪)</li>
+        <li><strong>Responsive:</strong> Se adapta a móvil, tablet y desktop</li>
+        <li><strong>Waitlist:</strong> Formulario funcional con validación</li>
+        <li><strong>Analytics:</strong> Google Analytics + Meta Pixel integrados</li>
+        <li><strong>Social Proof:</strong> Testimonios y contador animado</li>
+        <li><strong>SEO:</strong> Meta tags optimizados</li>
+    </ul>
+
+    <h2>✏️ Personalización</h2>
+    <p><strong>Cambiar colores:</strong> Edita las variables en <code>styles.css</code> (líneas 11-18)</p>
+    <p><strong>Cambiar textos:</strong> Edita <code>translations.js</code></p>
+    <p><strong>Analytics IDs:</strong> Reemplaza los IDs en <code>index.html</code> (líneas 370 y 378)</p>
+
+    <h2>📱 Exportar Datos de Waitlist</h2>
+    <p>En la página principal, abre la consola (F12) y ejecuta:</p>
+    <code style="display: block; padding: 15px; background: #1e293b; color: #fff; border-radius: 8px;">
+        exportWaitlist()
+    </code>
+
+    <hr style="margin: 40px 0;">
+
+    <p style="text-align: center; color: #64748b;">
+        <strong>🚀 ¡Todo listo para tu validación MVP!</strong><br>
+        Lee <code>README.md</code> para más detalles o <code>DEPLOY.md</code> para guía de despliegue.
+    </p>
+
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="index.html" class="button">🎯 Ir a Landing Page Principal</a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "coride-web",
+  "version": "1.0.0",
+  "description": "MVP Landing Page for Coride - Share transportation with your flight",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000"
+  },
+  "keywords": [
+    "coride",
+    "rideshare",
+    "airport",
+    "transportation",
+    "travel",
+    "mvp",
+    "landing-page"
+  ],
+  "author": "Coride Team",
+  "license": "MIT"
+}
