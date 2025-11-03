@@ -416,8 +416,7 @@ async function handleFeedbackSubmit(e) {
         name: document.getElementById('feedback-name').value,
         email: document.getElementById('feedback-email').value,
         message: document.getElementById('feedback-message').value,
-        updates: document.getElementById('feedback-updates').checked,
-        timestamp: new Date().toISOString(),
+        wants_updates: document.getElementById('feedback-updates').checked,
         language: localStorage.getItem('corideLanguage') || 'en',
         source: 'landing_page'
     };
@@ -426,18 +425,24 @@ async function handleFeedbackSubmit(e) {
         // Save to localStorage as backup
         saveFeedbackToLocal(feedbackData);
 
-        // TODO: Replace with your actual endpoint
-        // For now, we'll simulate a successful submission
-        const response = await fetch('/api/feedback', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(feedbackData)
-        }).catch(() => {
-            // If endpoint doesn't exist, continue anyway (for MVP)
-            return { ok: true };
-        });
+        // Check if Supabase is configured
+        if (typeof supabase === 'undefined' || SUPABASE_URL === 'TU_PROJECT_URL_AQUI') {
+            console.warn('⚠️ Supabase no configurado - Feedback guardado solo en localStorage');
+            throw new Error('Supabase no configurado');
+        }
+
+        // Save to Supabase database
+        const { data, error } = await supabase
+            .from('feedback')
+            .insert([feedbackData])
+            .select();
+
+        if (error) {
+            console.error('Supabase error:', error);
+            throw error;
+        }
+
+        console.log('✅ Feedback guardado en Supabase:', data);
 
         // Show success message
         form.style.display = 'none';
@@ -446,7 +451,7 @@ async function handleFeedbackSubmit(e) {
 
         // Track feedback submission
         trackEvent('feedback_submitted', {
-            has_updates_consent: feedbackData.updates
+            has_updates_consent: feedbackData.wants_updates
         });
 
         // Reset form after 5 seconds
@@ -458,7 +463,16 @@ async function handleFeedbackSubmit(e) {
 
     } catch (error) {
         console.error('Error:', error);
-        alert('Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo o escríbenos directamente.');
+
+        // Get current language for error message
+        const currentLang = localStorage.getItem('corideLanguage') || 'en';
+        const errorMessages = {
+            en: 'There was an error sending your message. It has been saved locally. Please try again or contact us directly.',
+            es: 'Hubo un error al enviar el mensaje. Se ha guardado localmente. Por favor, inténtalo de nuevo o contáctanos directamente.',
+            de: 'Beim Senden der Nachricht ist ein Fehler aufgetreten. Sie wurde lokal gespeichert. Bitte versuche es erneut oder kontaktiere uns direkt.'
+        };
+
+        alert(errorMessages[currentLang]);
     } finally {
         // Re-enable button
         submitButton.disabled = false;
@@ -478,11 +492,45 @@ function saveFeedbackToLocal(data) {
 }
 
 // Export feedback function (for admin use)
-function exportFeedback() {
+async function exportFeedback() {
+    try {
+        // Try to get from Supabase first
+        if (typeof supabase !== 'undefined' && SUPABASE_URL !== 'TU_PROJECT_URL_AQUI') {
+            console.log('📥 Descargando feedback desde Supabase...');
+
+            const { data, error } = await supabase
+                .from('feedback')
+                .select('*')
+                .order('created_at', { ascending: false });
+
+            if (error) {
+                console.error('Error al obtener feedback de Supabase:', error);
+                throw error;
+            }
+
+            if (data && data.length > 0) {
+                const dataStr = JSON.stringify(data, null, 2);
+                const blob = new Blob([dataStr], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = `coride-feedback-supabase-${new Date().toISOString()}.json`;
+                link.click();
+                URL.revokeObjectURL(url);
+
+                console.log(`✅ Exportados ${data.length} mensajes de feedback desde Supabase`);
+                return;
+            }
+        }
+    } catch (e) {
+        console.warn('No se pudo obtener feedback de Supabase, intentando localStorage...', e);
+    }
+
+    // Fallback to localStorage
     const feedback = JSON.parse(localStorage.getItem('corideFeedback') || '[]');
 
     if (feedback.length === 0) {
-        console.log('No feedback data to export');
+        console.log('❌ No hay feedback data para exportar (ni en Supabase ni en localStorage)');
         return;
     }
 
@@ -491,11 +539,11 @@ function exportFeedback() {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `coride-feedback-${new Date().toISOString()}.json`;
+    link.download = `coride-feedback-local-${new Date().toISOString()}.json`;
     link.click();
     URL.revokeObjectURL(url);
 
-    console.log(`✅ Exported ${feedback.length} feedback entries`);
+    console.log(`✅ Exportados ${feedback.length} mensajes de feedback desde localStorage`);
 }
 
 // Make functions available globally for console use
