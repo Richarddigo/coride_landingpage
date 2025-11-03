@@ -52,26 +52,12 @@ const translations = {
                 desc: "Every user verified through flight booking. Only real passengers from your exact flight — no random strangers."
             }
         },
-        testimonials: {
-            title: "What early testers say",
-            t1: {
-                text: "Amazing! I found 3 people to share a taxi from Madrid airport and saved €15. Super easy!",
-                name: "María G.",
-                detail: "Madrid → Barcelona"
-            },
-            t2: {
-                text: "Perfect for frequent travelers. I use it every week and always find someone going my way.",
-                name: "Thomas M.",
-                detail: "Berlin → Munich"
-            },
-            t3: {
-                text: "Not only did I save money, but I made a new friend who's also a digital nomad!",
-                name: "Laura S.",
-                detail: "Barcelona → Valencia"
-            },
+        socialProof: {
+            travelers: "Travelers already waiting to try CoRide",
+            title: "Join the first testers",
+            subtitle: "Be part of the community that's changing how we travel to airports. Save money, travel smarter.",
             airports: "Available at any airport worldwide",
-            more: "Connect with travelers wherever you fly ✈️",
-            disclaimer: "* Experiences from our early user group"
+            airportsDetail: "Connect with travelers wherever you fly ✈️"
         },
         cta: {
             title: "Be One of the First 50 Beta Testers",
@@ -163,26 +149,12 @@ const translations = {
                 desc: "Usuarios verificados mediante reserva de vuelo. Solo pasajeros reales de tu vuelo exacto — sin desconocidos aleatorios."
             }
         },
-        testimonials: {
-            title: "Qué dicen los primeros testers",
-            t1: {
-                text: "¡Increíble! Encontré a 3 personas para compartir taxi desde el aeropuerto de Madrid y ahorré 15€. ¡Súper fácil!",
-                name: "María G.",
-                detail: "Madrid → Barcelona"
-            },
-            t2: {
-                text: "Perfecto para viajeros frecuentes. Lo uso cada semana y siempre encuentro a alguien que va en mi dirección.",
-                name: "Thomas M.",
-                detail: "Berlín → Múnich"
-            },
-            t3: {
-                text: "No solo ahorré dinero, ¡hice un nuevo amigo que también es nómada digital!",
-                name: "Laura S.",
-                detail: "Barcelona → Valencia"
-            },
+        socialProof: {
+            travelers: "Viajeros ya esperando para probar CoRide",
+            title: "Únete a los primeros testers",
+            subtitle: "Forma parte de la comunidad que está cambiando cómo viajamos a los aeropuertos. Ahorra dinero, viaja más inteligente.",
             airports: "Disponible en cualquier aeropuerto del mundo",
-            more: "Conecta con viajeros dondequiera que vueles ✈️",
-            disclaimer: "* Experiencias de nuestro grupo inicial de usuarios"
+            airportsDetail: "Conecta con viajeros dondequiera que vueles ✈️"
         },
         cta: {
             title: "Sé Uno de los Primeros 50 Beta Testers",
@@ -274,26 +246,12 @@ const translations = {
                 desc: "Nutzer verifiziert durch Flugbuchung. Nur echte Passagiere deines exakten Flugs — keine zufälligen Fremden."
             }
         },
-        testimonials: {
-            title: "Was erste Tester sagen",
-            t1: {
-                text: "Fantastisch! Ich fand 3 Leute, um ein Taxi vom Flughafen Madrid zu teilen und sparte 15€. Super einfach!",
-                name: "María G.",
-                detail: "Madrid → Barcelona"
-            },
-            t2: {
-                text: "Perfekt für Vielreisende. Ich nutze es jede Woche und finde immer jemanden, der in meine Richtung fährt.",
-                name: "Thomas M.",
-                detail: "Berlin → München"
-            },
-            t3: {
-                text: "Ich habe nicht nur Geld gespart, sondern auch einen neuen Freund gefunden, der auch digitaler Nomade ist!",
-                name: "Laura S.",
-                detail: "Barcelona → Valencia"
-            },
+        socialProof: {
+            travelers: "Reisende warten bereits darauf, CoRide auszuprobieren",
+            title: "Werde einer der ersten Tester",
+            subtitle: "Sei Teil der Community, die verändert, wie wir zu Flughäfen reisen. Spare Geld, reise smarter.",
             airports: "Verfügbar an jedem Flughafen weltweit",
-            more: "Verbinde dich mit Reisenden, wo auch immer du fliegst ✈️",
-            disclaimer: "* Erfahrungen aus unserer frühen Nutzergruppe"
+            airportsDetail: "Verbinde dich mit Reisenden, wo auch immer du fliegst ✈️"
         },
         cta: {
             title: "Werde Einer der Ersten 50 Beta-Tester",

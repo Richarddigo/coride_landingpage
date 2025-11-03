@@ -601,105 +601,88 @@ body {
     font-size: 16px;
 }
 
-/* Testimonials */
-.testimonials {
+/* Social Proof */
+.social-proof {
     padding: 80px 0;
-    background: white;
+    background: linear-gradient(135deg, #f8fafc 0%, #e3f2fd 100%);
 }
 
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-bottom: 60px;
-}
-
-.testimonial-card {
-    background: white;
-    padding: 26px;
-    border-radius: 12px;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-    transition: all 0.2s ease;
-}
-
-.testimonial-card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.testimonial-rating {
-    margin-bottom: 16px;
-    font-size: 18px;
-}
-
-.testimonial-text {
-    color: var(--dark);
-    font-size: 16px;
-    margin-bottom: 20px;
-    line-height: 1.6;
-}
-
-.testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.testimonial-avatar {
-    width: 40px;
-    height: 40px;
-    background: var(--primary);
-    border-radius: 50%;
+.social-proof-content {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
+    gap: 60px;
+    margin-bottom: 60px;
+    padding: 40px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
-.testimonial-name {
-    font-weight: 700;
-    color: var(--dark);
-}
-
-.testimonial-detail {
-    font-size: 14px;
-    color: var(--gray);
-}
-
-.testimonials-disclaimer {
+.social-proof-stat {
     text-align: center;
-    font-size: 13px;
+    padding: 20px;
+    border-right: 2px solid var(--border);
+}
+
+.social-proof-number {
+    font-size: 64px;
+    font-weight: 900;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, var(--primary) 0%, #2d4373 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.social-proof-text {
+    font-size: 16px;
     color: var(--gray);
-    font-style: italic;
-    margin-top: 40px;
-    opacity: 0.8;
+    font-weight: 600;
+    max-width: 200px;
+    margin: 0;
+}
+
+.social-proof-message {
+    flex: 1;
+    text-align: left;
+}
+
+.social-proof-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--dark);
+    margin-bottom: 12px;
+}
+
+.social-proof-subtitle {
+    font-size: 16px;
+    color: var(--gray);
+    line-height: 1.6;
+    margin: 0;
 }
 
 .airports-supported {
     text-align: center;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 .airports-label {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 8px;
+}
+
+.airports-sublabel {
     font-size: 16px;
     color: var(--gray);
-    margin-bottom: 20px;
-}
-
-.airport-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-}
-
-.airport-tag {
-    background: var(--light);
-    padding: 10px 20px;
-    border-radius: 25px;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--dark);
-    border: 2px solid var(--border);
+    margin: 0;
 }
 
 /* CTA Section */
@@ -1231,6 +1214,35 @@ body {
 
     .goodbye-highlight {
         font-size: 20px;
+    }
+
+    .social-proof-content {
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px 20px;
+    }
+
+    .social-proof-stat {
+        border-right: none;
+        border-bottom: 2px solid var(--border);
+        padding-bottom: 20px;
+    }
+
+    .social-proof-number {
+        font-size: 48px;
+    }
+
+    .social-proof-title {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .social-proof-message {
+        text-align: center;
+    }
+
+    .airports-label {
+        font-size: 18px;
     }
 
     .nav {
