@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200">
+  <!-- Texto "coride" en blanco -->
+  <text x="30" y="85" font-family="Georgia, 'Times New Roman', serif" font-size="75" font-weight="400" fill="#ffffff" letter-spacing="1">
+    coride
+  </text>
+  
+  <!-- Icono de montañas a la derecha del texto -->
+  <g transform="translate(370, 25)">
+    <!-- Montaña izquierda -->
+    <path d="M 10 60 L 35 15 L 60 60 Z" fill="#ffffff"/>
+    <path d="M 35 15 L 42 28 L 35 33 Z" fill="#000000" opacity="0.15"/>
+    
+    <!-- Montaña central (más alta) -->
+    <path d="M 40 60 L 70 5 L 100 60 Z" fill="#ffffff"/>
+    <path d="M 70 5 L 78 20 L 70 28 Z" fill="#000000" opacity="0.2"/>
+    
+    <!-- Montaña derecha -->
+    <path d="M 80 60 L 105 22 L 130 60 Z" fill="#ffffff"/>
+    <path d="M 105 22 L 112 35 L 105 38 Z" fill="#000000" opacity="0.15"/>
+    
+    <!-- Terreno ondulado -->
+    <ellipse cx="70" cy="62" rx="60" ry="3" fill="#ffffff" opacity="0.5"/>
+  </g>
+  
+  <!-- Texto "PATHS OF WONDER" en blanco -->
+  <text x="32" y="130" font-family="Arial, 'Helvetica Neue', sans-serif" font-size="22" font-weight="800" letter-spacing="5" fill="#ffffff">
+    PATHS OF WONDER
+  </text>
+</svg>

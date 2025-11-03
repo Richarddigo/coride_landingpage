@@ -14,7 +14,7 @@
     <meta property="og:image" content="./assets/og-image.jpg">
 
     <title>Coride - Share transportation with your flight</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=3.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -33,10 +33,14 @@
         <div class="container">
             <div class="nav">
                 <div class="logo">
-                    <span class="logo-icon">✈️</span>
-                    <span class="logo-text">Coride</span>
+                    <div class="logo-container">
+                        <div class="logo-text-container">
+                            <span class="logo-coride">coride</span>
+                            <span class="logo-paths">PATHS OF WONDER</span>
+                        </div>
+                    </div>
                 </div>
-                <button class="cta-btn-header" id="headerCtaBtn" data-translate="cta">Join Beta</button>
+                <button class="cta-btn-header" id="headerCtaBtn" data-translate="ctaButton">Join Beta</button>
             </div>
         </div>
     </header>
@@ -51,7 +55,7 @@
                 <p class="hero-subtitle" data-translate="hero.subtitle">
                     Don't travel alone to the airport. Connect with passengers on your flight, share taxi or rideshare, and save up to 70% on transportation costs.
                 </p>
-                <button class="cta-btn-main" id="mainCtaBtn" data-translate="cta">
+                <button class="cta-btn-main" id="mainCtaBtn" data-translate="ctaButton">
                     I want to try it 🚀
                 </button>
                 <div class="hero-stats">
@@ -221,7 +225,7 @@
             <div class="cta-box">
                 <h2 class="cta-title" data-translate="cta.title">Join the first 50 testers</h2>
                 <p class="cta-subtitle" data-translate="cta.subtitle">Get early access and start saving on your next trip</p>
-                <button class="cta-btn-main" id="footerCtaBtn" data-translate="cta">I want to try it 🚀</button>
+                <button class="cta-btn-main" id="footerCtaBtn" data-translate="ctaButton">I want to try it 🚀</button>
                 <p class="cta-note" data-translate="cta.note">✨ Early testers get lifetime premium features</p>
             </div>
         </div>
@@ -232,8 +236,10 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <span class="logo-icon">✈️</span>
-                    <span class="logo-text">Coride</span>
+                    <div class="logo-text-container">
+                        <span class="logo-coride logo-coride-white">coride</span>
+                        <span class="logo-paths logo-paths-white">PATHS OF WONDER</span>
+                    </div>
                 </div>
                 <p class="footer-tagline" data-translate="footer.tagline">Travel better together</p>
                 <div class="footer-links">
@@ -287,8 +293,8 @@
     </div>
 
     <!-- Scripts -->
-    <script src="translations.js"></script>
-    <script src="app.js"></script>
+    <script src="translations.js?v=3.0"></script>
+    <script src="app.js?v=3.0"></script>
 
     <!-- Google Analytics (replace with your ID) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -304,7 +310,7 @@
         !function (f, b, e, v, n, t, s) {
             if (f.fbq) return; n = f.fbq = function () {
                 n.callMethod ?
-                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
             if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
             n.queue = []; t = b.createElement(e); t.async = !0;

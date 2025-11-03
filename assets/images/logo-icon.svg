@@ -1,0 +1,9 @@
+<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icono de montaña simplificado -->
+  <g transform="translate(5, 10)">
+    <path d="M 10 45 L 25 10 L 40 45 Z" fill="#1e293b"/>
+    <path d="M 15 45 L 30 20 L 45 45 Z" fill="#2d3748"/>
+    <path d="M 20 45 L 33 25 L 46 45 Z" fill="#334155"/>
+    <ellipse cx="28" cy="47" rx="22" ry="3" fill="#1e293b" opacity="0.5"/>
+  </g>
+</svg>

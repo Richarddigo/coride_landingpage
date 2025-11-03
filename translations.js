@@ -1,6 +1,6 @@
 const translations = {
     en: {
-        cta: "I want to try it 🚀",
+        ctaButton: "I want to try it 🚀",
         hero: {
             title: "Share transportation with people from your flight",
             subtitle: "Don't travel alone to the airport. Connect with passengers on your flight, share taxi or rideshare, and save up to 70% on transportation costs.",
@@ -70,7 +70,7 @@ const translations = {
             note: "✨ Early testers get lifetime premium features"
         },
         footer: {
-            tagline: "Travel better together",
+            tagline: "Paths of Wonder",
             rights: "All rights reserved"
         },
         form: {
@@ -89,7 +89,7 @@ const translations = {
         }
     },
     es: {
-        cta: "Quiero probarlo 🚀",
+        ctaButton: "Quiero probarlo 🚀",
         hero: {
             title: "Comparte transporte con gente de tu vuelo",
             subtitle: "No viajes solo al aeropuerto. Conecta con pasajeros de tu vuelo, comparte taxi o rideshare, y ahorra hasta un 70% en costes de transporte.",
@@ -159,7 +159,7 @@ const translations = {
             note: "✨ Los primeros testers obtienen funciones premium de por vida"
         },
         footer: {
-            tagline: "Viaja mejor juntos",
+            tagline: "Caminos de Maravilla",
             rights: "Todos los derechos reservados"
         },
         form: {
@@ -178,7 +178,7 @@ const translations = {
         }
     },
     de: {
-        cta: "Ich möchte es ausprobieren 🚀",
+        ctaButton: "Ich möchte es ausprobieren 🚀",
         hero: {
             title: "Teile Transportmittel mit Leuten von deinem Flug",
             subtitle: "Reise nicht allein zum Flughafen. Verbinde dich mit Passagieren deines Flugs, teile ein Taxi oder Rideshare und spare bis zu 70% der Transportkosten.",
@@ -248,7 +248,7 @@ const translations = {
             note: "✨ Frühe Tester erhalten lebenslang Premium-Funktionen"
         },
         footer: {
-            tagline: "Reise besser zusammen",
+            tagline: "Wege der Wunder",
             rights: "Alle Rechte vorbehalten"
         },
         form: {

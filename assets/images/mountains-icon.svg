@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300">
+  <!-- Montañas - basado en tu logo original -->
+  <g transform="translate(100, 80)">
+    <!-- Montaña principal izquierda -->
+    <path d="M 0 120 L 60 20 L 120 120 Z" fill="#1a1a1a"/>
+    <path d="M 60 20 L 85 60 L 60 60 Z" fill="#ffffff" opacity="0.3"/>
+    
+    <!-- Montaña central -->
+    <path d="M 80 120 L 150 10 L 220 120 Z" fill="#1a1a1a"/>
+    <path d="M 150 10 L 175 50 L 150 60 Z" fill="#ffffff" opacity="0.4"/>
+    
+    <!-- Montaña derecha -->
+    <path d="M 180 120 L 250 35 L 320 120 Z" fill="#1a1a1a"/>
+    <path d="M 250 35 L 270 65 L 250 70 Z" fill="#ffffff" opacity="0.3"/>
+    
+    <!-- Líneas de terreno onduladas -->
+    <path d="M 0 120 Q 80 115, 160 120 T 320 120" stroke="#1a1a1a" stroke-width="2" fill="none"/>
+    <path d="M 0 130 Q 80 125, 160 130 T 320 130" stroke="#1a1a1a" stroke-width="1.5" fill="none" opacity="0.5"/>
+  </g>
+</svg>

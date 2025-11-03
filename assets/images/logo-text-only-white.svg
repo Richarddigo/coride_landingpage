@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 280">
+  <!-- Texto "coride" en blanco -->
+  <text x="50" y="120" font-family="Georgia, serif" font-size="85" font-weight="400" fill="#ffffff" letter-spacing="2">
+    coride
+  </text>
+  
+  <!-- Texto "PATHS OF WONDER" en blanco -->
+  <text x="52" y="180" font-family="Arial, sans-serif" font-size="28" font-weight="800" letter-spacing="6" fill="#ffffff">
+    PATHS OF WONDER
+  </text>
+</svg>
