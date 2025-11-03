@@ -2,12 +2,12 @@ const translations = {
     en: {
         ctaButton: "Join the beta 🚀",
         hero: {
-            title: "Share Airport Rides. Split the Cost. Travel Smart.",
-            subtitle: "Connect with passengers from your flight and share taxis or Ubers. Save up to 70% on airport transportation — it's that simple.",
+            title: "Land Smarter. Share the Ride.",
+            subtitle: "Find passengers from your flight and split airport transfers. Save €20-60 per trip on taxis and Ubers — coordinate in seconds.",
             stats: {
-                early: "Beta testers",
-                saved: "Avg. saved per flight",
-                setup: "To get started"
+                early: "Beta testers ready",
+                saved: "Avg. saved per trip",
+                setup: "To coordinate"
             }
         },
         how: {
@@ -48,8 +48,8 @@ const translations = {
                 desc: "Easy chat with passengers from your flight. Coordinate pickup, split fare, done."
             },
             safe: {
-                title: "Verified Users",
-                desc: "Only real passengers from your flight. Secure, simple, reliable."
+                title: "Same Flight Only",
+                desc: "Every user verified through flight booking. Only real passengers from your exact flight — no random strangers."
             }
         },
         testimonials: {
@@ -70,12 +70,13 @@ const translations = {
                 detail: "Barcelona → Valencia"
             },
             airports: "Available at any airport worldwide",
-            more: "Connect with travelers wherever you fly ✈️"
+            more: "Connect with travelers wherever you fly ✈️",
+            disclaimer: "* Experiences from our early user group"
         },
         cta: {
-            title: "Join the first 50 testers",
-            subtitle: "Get early access and start saving on your next trip",
-            note: "✨ Early testers get lifetime premium features"
+            title: "Be One of the First 50 Beta Testers",
+            subtitle: "Get exclusive early access and start saving on airport rides immediately",
+            note: "🎁 First 50 testers unlock lifetime premium features — forever free"
         },
         footer: {
             tagline: "Paths of Wonder",
@@ -100,12 +101,12 @@ const translations = {
     es: {
         ctaButton: "Únete a la beta 🚀",
         hero: {
-            title: "Comparte Taxi al Aeropuerto. Divide el Coste. Viaja Listo.",
-            subtitle: "Conecta con pasajeros de tu vuelo y comparte taxi o Uber. Ahorra hasta un 70% en transporte al aeropuerto — así de fácil.",
+            title: "Aterriza Mejor. Comparte el Viaje.",
+            subtitle: "Encuentra pasajeros de tu vuelo y divide el transporte al aeropuerto. Ahorra 20-60€ por trayecto en taxis y Ubers — coordina en segundos.",
             stats: {
-                early: "Beta testers",
-                saved: "Ahorro medio por vuelo",
-                setup: "Para empezar"
+                early: "Beta testers esperando",
+                saved: "Ahorro medio por viaje",
+                setup: "Para coordinar"
             }
         },
         how: {
@@ -146,8 +147,8 @@ const translations = {
                 desc: "Chat fácil con pasajeros de tu vuelo. Coordina punto de encuentro, divide tarifa, listo."
             },
             safe: {
-                title: "Usuarios Verificados",
-                desc: "Solo pasajeros reales de tu vuelo. Seguro, simple, fiable."
+                title: "Solo del Mismo Vuelo",
+                desc: "Usuarios verificados mediante reserva de vuelo. Solo pasajeros reales de tu vuelo exacto — sin desconocidos aleatorios."
             }
         },
         testimonials: {
@@ -168,12 +169,13 @@ const translations = {
                 detail: "Barcelona → Valencia"
             },
             airports: "Disponible en cualquier aeropuerto del mundo",
-            more: "Conecta con viajeros dondequiera que vueles ✈️"
+            more: "Conecta con viajeros dondequiera que vueles ✈️",
+            disclaimer: "* Experiencias de nuestro grupo inicial de usuarios"
         },
         cta: {
-            title: "Únete a los primeros 50 testers",
-            subtitle: "Consigue acceso anticipado y empieza a ahorrar en tu próximo viaje",
-            note: "✨ Los primeros testers obtienen funciones premium de por vida"
+            title: "Sé Uno de los Primeros 50 Beta Testers",
+            subtitle: "Consigue acceso exclusivo anticipado y empieza a ahorrar en tus trayectos al aeropuerto ahora mismo",
+            note: "🎁 Los primeros 50 testers desbloquean funciones premium de por vida — gratis para siempre"
         },
         footer: {
             tagline: "Caminos de Maravilla",
@@ -198,12 +200,12 @@ const translations = {
     de: {
         ctaButton: "Zur Beta anmelden 🚀",
         hero: {
-            title: "Fahrten Teilen. Kosten Teilen. Clever Reisen.",
-            subtitle: "Verbinde dich mit Passagieren deines Flugs und teilt euch Taxi oder Uber. Spare bis zu 70% beim Flughafen-Transfer — ganz einfach.",
+            title: "Lande Smarter. Teile die Fahrt.",
+            subtitle: "Finde Passagiere deines Flugs und teilt euch den Flughafen-Transfer. Spare 20-60€ pro Fahrt bei Taxi und Uber — koordiniere in Sekunden.",
             stats: {
-                early: "Beta-Tester",
-                saved: "Ø Ersparnis pro Flug",
-                setup: "Zum Loslegen"
+                early: "Beta-Tester warten",
+                saved: "Ø Ersparnis pro Fahrt",
+                setup: "Zum Koordinieren"
             }
         },
         how: {
@@ -244,8 +246,8 @@ const translations = {
                 desc: "Unkomplizierter Chat mit Passagieren deines Flugs. Treffpunkt abstimmen, Kosten teilen, fertig."
             },
             safe: {
-                title: "Verifizierte Nutzer",
-                desc: "Nur echte Passagiere deines Flugs. Sicher, einfach, zuverlässig."
+                title: "Nur vom Selben Flug",
+                desc: "Nutzer verifiziert durch Flugbuchung. Nur echte Passagiere deines exakten Flugs — keine zufälligen Fremden."
             }
         },
         testimonials: {
@@ -266,12 +268,13 @@ const translations = {
                 detail: "Barcelona → Valencia"
             },
             airports: "Verfügbar an jedem Flughafen weltweit",
-            more: "Verbinde dich mit Reisenden, wo auch immer du fliegst ✈️"
+            more: "Verbinde dich mit Reisenden, wo auch immer du fliegst ✈️",
+            disclaimer: "* Erfahrungen aus unserer frühen Nutzergruppe"
         },
         cta: {
-            title: "Werde einer der ersten 50 Tester",
-            subtitle: "Erhalte frühen Zugang und spare bei deiner nächsten Reise",
-            note: "✨ Frühe Tester erhalten lebenslang Premium-Funktionen"
+            title: "Werde Einer der Ersten 50 Beta-Tester",
+            subtitle: "Sichere dir exklusiven Früh-Zugang und spare sofort bei Flughafen-Fahrten",
+            note: "🎁 Die ersten 50 Tester erhalten Premium-Features auf Lebenszeit — für immer kostenlos"
         },
         footer: {
             tagline: "Wege des Staunens",

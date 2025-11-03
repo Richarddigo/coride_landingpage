@@ -96,25 +96,19 @@ body {
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
 }
 
 .logo-mountain {
-    height: 38px;
+    height: 32px;
     width: auto;
     object-fit: contain;
 }
 
-.logo-text-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
 .logo-coride {
     font-family: Georgia, 'Times New Roman', serif;
-    font-size: 28px;
-    font-weight: 400;
+    font-size: 26px;
+    font-weight: 500;
     color: #1e293b;
     letter-spacing: 0.5px;
     line-height: 1;
@@ -670,6 +664,15 @@ body {
 .testimonial-detail {
     font-size: 14px;
     color: var(--gray);
+}
+
+.testimonials-disclaimer {
+    text-align: center;
+    font-size: 13px;
+    color: var(--gray);
+    font-style: italic;
+    margin-top: 40px;
+    opacity: 0.8;
 }
 
 .airports-supported {
