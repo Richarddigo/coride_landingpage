@@ -101,6 +101,12 @@ body {
     gap: 12px;
 }
 
+.logo-mountain {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+}
+
 .logo-text-container {
     display: flex;
     flex-direction: column;
@@ -610,10 +616,11 @@ body {
 }
 
 .footer-logo {
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
     margin-bottom: 16px;
 }
 
@@ -626,13 +633,15 @@ body {
     color: rgba(255, 255, 255, 0.7) !important;
 }
 
-.footer-logo .logo-coride {
-    font-size: 36px;
+.logo-mountain-footer {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
 }
 
-.footer-logo .logo-paths {
-    font-size: 11px;
-    letter-spacing: 4px;
+.footer-logo .logo-coride {
+    font-size: 36px;
+    margin-top: -8px;
 }
 
 /* Logo footer con imagen */
@@ -930,6 +939,10 @@ body {
         padding: 30px 20px;
     }
 
+    .logo-mountain {
+        height: 28px;
+    }
+
     .logo-coride {
         font-size: 22px;
     }
@@ -937,6 +950,10 @@ body {
     .logo-paths {
         font-size: 7px;
         letter-spacing: 2px;
+    }
+
+    .logo-mountain-footer {
+        height: 38px;
     }
 
     .footer-logo .logo-coride {

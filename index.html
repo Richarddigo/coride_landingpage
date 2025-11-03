@@ -14,7 +14,8 @@
     <meta property="og:image" content="./assets/og-image.jpg">
 
     <title>Coride - Share transportation with your flight</title>
-    <link rel="stylesheet" href="styles.css?v=3.0">
+    <link rel="icon" type="image/svg+xml" href="assets/images/mountain_black.svg">
+    <link rel="stylesheet" href="styles.css?v=5.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -34,6 +35,7 @@
             <div class="nav">
                 <div class="logo">
                     <div class="logo-container">
+                        <img src="assets/images/mountain_black.svg" alt="Coride Mountain" class="logo-mountain">
                         <div class="logo-text-container">
                             <span class="logo-coride">coride</span>
                             <span class="logo-paths">PATHS OF WONDER</span>
@@ -64,7 +66,7 @@
                         <span class="stat-label" data-translate="hero.stats.early">Early testers</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-number">€15</span>
+                        <span class="stat-number">€48</span>
                         <span class="stat-label" data-translate="hero.stats.saved">Avg. saved</span>
                     </div>
                     <div class="stat">
@@ -236,15 +238,12 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
+                    <img src="assets/images/mountain_white.svg" alt="Coride Mountain" class="logo-mountain-footer">
                     <div class="logo-text-container">
                         <span class="logo-coride logo-coride-white">coride</span>
-                        <span class="logo-paths logo-paths-white">PATHS OF WONDER</span>
                     </div>
                 </div>
-                <p class="footer-tagline" data-translate="footer.tagline">Travel better together</p>
-                <div class="footer-links">
-                    <a href="mailto:hello@coride.app" class="footer-link">hello@coride.app</a>
-                </div>
+                <p class="footer-tagline" data-translate="footer.tagline">Paths of Wonder</p>
                 <p class="footer-copy">© 2025 Coride. <span data-translate="footer.rights">All rights reserved</span>.</p>
             </div>
         </div>
@@ -258,7 +257,7 @@
             <h2 class="modal-title" data-translate="form.title">Join the beta! 🚀</h2>
             <p class="modal-subtitle" data-translate="form.subtitle">Be among the first to try Coride and travel smarter</p>
 
-            <form class="waitlist-form" id="waitlistForm">
+            <form class="waitlist-form" id="waitlistForm" action="https://formspree.io/f/xeoqngbl" method="POST">
                 <div class="form-group">
                     <label for="name" data-translate="form.name">Name</label>
                     <input type="text" id="name" name="name" required placeholder="John Doe">
@@ -279,6 +278,11 @@
                     <label for="beta" data-translate="form.beta">I want to be a beta tester</label>
                 </div>
 
+                <!-- Campo oculto para especificar tu email -->
+                <input type="hidden" name="_replyto" value="richarddigo@gmail.com">
+                <input type="hidden" name="_subject" value="🚀 Nuevo registro en Coride Waitlist">
+                <input type="hidden" name="_next" value="">
+
                 <button type="submit" class="form-submit" data-translate="form.submit">Join waitlist</button>
 
                 <p class="form-note" data-translate="form.privacy">We respect your privacy. No spam, ever.</p>
@@ -293,8 +297,8 @@
     </div>
 
     <!-- Scripts -->
-    <script src="translations.js?v=3.0"></script>
-    <script src="app.js?v=3.0"></script>
+    <script src="translations.js?v=6.0"></script>
+    <script src="app.js?v=6.0"></script>
 
     <!-- Google Analytics (replace with your ID) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>

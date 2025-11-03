@@ -40,6 +40,9 @@ function initApp() {
     const form = document.getElementById('waitlistForm');
     form.addEventListener('submit', handleFormSubmit);
 
+    // Load counter from storage (inicia en 127 si es primera vez)
+    loadCounter();
+
     // Animated counter
     animateCounter();
 
@@ -67,9 +70,10 @@ function closeWaitlistModal() {
 }
 
 // Form handling
-function handleFormSubmit(e) {
+async function handleFormSubmit(e) {
     e.preventDefault();
 
+    const form = e.target;
     const formData = {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
@@ -79,28 +83,46 @@ function handleFormSubmit(e) {
         language: localStorage.getItem('corideLanguage') || 'en'
     };
 
-    // Save to localStorage (in production, send to backend/service)
+    // Save to localStorage as backup
     saveToWaitlist(formData);
 
-    // Track conversion
-    trackEvent('waitlist_signup', {
-        email: formData.email,
-        has_flight: !!formData.flight
-    });
-
-    // Track Facebook Pixel conversion (if available)
-    if (typeof fbq !== 'undefined') {
-        fbq('track', 'Lead', {
-            content_name: 'Waitlist Signup',
-            status: 'completed'
+    // Send to Formspree
+    try {
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: {
+                'Accept': 'application/json'
+            }
         });
+
+        if (response.ok) {
+            // Track conversion
+            trackEvent('waitlist_signup', {
+                email: formData.email,
+                has_flight: !!formData.flight
+            });
+
+            // Track Facebook Pixel conversion (if available)
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead', {
+                    content_name: 'Waitlist Signup',
+                    status: 'completed'
+                });
+            }
+
+            // Show success message
+            showSuccessMessage();
+
+            // Update counter
+            updateCounter();
+        } else {
+            alert('Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.');
     }
-
-    // Show success message
-    showSuccessMessage();
-
-    // Update counter
-    updateCounter();
 }
 
 // Save waitlist data
@@ -180,10 +202,15 @@ function updateCounter() {
 
 // Load counter from localStorage on init
 function loadCounter() {
+    const counter = document.getElementById('counterUsers');
     const saved = localStorage.getItem('corideUserCount');
+
     if (saved) {
-        const counter = document.getElementById('counterUsers');
         counter.textContent = saved;
+    } else {
+        // Iniciar con 127 testers existentes
+        counter.textContent = '127';
+        localStorage.setItem('corideUserCount', '127');
     }
 }
 
@@ -216,9 +243,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
-
-// Load counter on page load
-window.addEventListener('load', loadCounter);
 
 // Track scroll depth
 let scrollDepth = 0;
