@@ -34,7 +34,7 @@ const translations = {
             cta: "Share rides. Split costs. Arrive smart."
         },
         benefits: {
-            title: "Why travelers choose Coride",
+            title: "Why travelers choose CoRide",
             save: {
                 title: "Save Money",
                 desc: "Split Uber or taxi costs with flight passengers. Save €20-60 per trip on average."
@@ -85,7 +85,7 @@ const translations = {
                 name: "Name",
                 email: "Email",
                 message: "Message",
-                updates: "I want to receive updates about Coride",
+                updates: "I want to receive updates about CoRide",
                 submit: "Send message"
             },
             success: "Thank you! We've received your message."
@@ -96,7 +96,7 @@ const translations = {
         },
         form: {
             title: "Join the beta! 🚀",
-            subtitle: "Be among the first to try Coride and travel smarter",
+            subtitle: "Be among the first to try CoRide and travel smarter",
             name: "Name",
             email: "Email",
             flight: "Next flight (optional)",
@@ -145,7 +145,7 @@ const translations = {
             cta: "Comparte trayectos. Divide costes. Llega listo."
         },
         benefits: {
-            title: "Por qué los viajeros eligen Coride",
+            title: "Por qué los viajeros eligen CoRide",
             save: {
                 title: "Ahorra Dinero",
                 desc: "Divide el coste de Uber o taxi con pasajeros de tu vuelo. Ahorra 20-60€ de media por viaje."
@@ -196,7 +196,7 @@ const translations = {
                 name: "Nombre",
                 email: "Email",
                 message: "Mensaje",
-                updates: "Quiero recibir actualizaciones sobre Coride",
+                updates: "Quiero recibir actualizaciones sobre CoRide",
                 submit: "Enviar mensaje"
             },
             success: "¡Gracias! Hemos recibido tu mensaje."
@@ -207,7 +207,7 @@ const translations = {
         },
         form: {
             title: "¡Únete a la beta! 🚀",
-            subtitle: "Sé de los primeros en probar Coride y viajar más inteligente",
+            subtitle: "Sé de los primeros en probar CoRide y viajar más inteligente",
             name: "Nombre",
             email: "Correo electrónico",
             flight: "Próximo vuelo (opcional)",
@@ -256,7 +256,7 @@ const translations = {
             cta: "Fahrten teilen. Kosten teilen. Clever ankommen."
         },
         benefits: {
-            title: "Warum Reisende Coride wählen",
+            title: "Warum Reisende CoRide wählen",
             save: {
                 title: "Geld Sparen",
                 desc: "Teilt Uber oder Taxi mit Flugpassagieren. Spart durchschnittlich 20-60€ pro Fahrt."
@@ -307,7 +307,7 @@ const translations = {
                 name: "Name",
                 email: "E-Mail",
                 message: "Nachricht",
-                updates: "Ich möchte Updates über Coride erhalten",
+                updates: "Ich möchte Updates über CoRide erhalten",
                 submit: "Nachricht senden"
             },
             success: "Vielen Dank! Wir haben deine Nachricht erhalten."
@@ -318,7 +318,7 @@ const translations = {
         },
         form: {
             title: "Tritt der Beta bei! 🚀",
-            subtitle: "Sei einer der Ersten, die Coride ausprobieren und smarter reisen",
+            subtitle: "Sei einer der Ersten, die CoRide ausprobieren und smarter reisen",
             name: "Name",
             email: "E-Mail",
             flight: "Nächster Flug (optional)",
