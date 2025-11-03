@@ -18,7 +18,7 @@
 
     <title>Coride - Share transportation with your flight</title>
     <link rel="icon" type="image/svg+xml" href="assets/images/mountain_black.svg">
-    <link rel="stylesheet" href="styles.css?v=5.0">
+    <link rel="stylesheet" href="styles.css?v=14.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -28,13 +28,6 @@
 </head>
 
 <body>
-    <!-- Language Selector -->
-    <div class="language-selector">
-        <button class="lang-btn active" data-lang="en">🇬🇧 EN</button>
-        <button class="lang-btn" data-lang="es">🇪🇸 ES</button>
-        <button class="lang-btn" data-lang="de">🇩🇪 DE</button>
-    </div>
-
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -48,6 +41,14 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Language Selector -->
+                <div class="language-selector">
+                    <button class="lang-btn active" data-lang="en">🇬🇧 EN</button>
+                    <button class="lang-btn" data-lang="es">🇪🇸 ES</button>
+                    <button class="lang-btn" data-lang="de">🇩🇪 DE</button>
+                </div>
+
                 <button class="cta-btn-header" id="headerCtaBtn" data-translate="ctaButton">Join Beta</button>
             </div>
         </div>
@@ -73,11 +74,11 @@
                     </div>
                     <div class="stat">
                         <span class="stat-number">€48</span>
-                        <span class="stat-label" data-translate="hero.stats.saved">Avg. saved</span>
+                        <span class="stat-label" data-translate="hero.stats.saved">per flight</span>
                     </div>
                     <div class="stat">
-                        <span class="stat-number">3min</span>
-                        <span class="stat-label" data-translate="hero.stats.setup">Setup time</span>
+                        <span class="stat-number">3 min</span>
+                        <span class="stat-label" data-translate="hero.stats.setup">to get started</span>
                     </div>
                 </div>
             </div>
@@ -141,6 +142,34 @@
                     <h3 class="step-title" data-translate="how.step3.title">Connect & save</h3>
                     <p class="step-description" data-translate="how.step3.desc">Chat, coordinate, and share transportation costs</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Say Goodbye Section -->
+    <section class="say-goodbye">
+        <div class="container">
+            <h2 class="section-title say-goodbye-title" data-translate="goodbye.title">Say goodbye to solo travel</h2>
+            <div class="goodbye-grid">
+                <div class="goodbye-item">
+                    <span class="goodbye-icon">🚫</span>
+                    <p class="goodbye-text" data-translate="goodbye.lonely">No more feeling lonely on your way to the airport</p>
+                </div>
+                <div class="goodbye-item">
+                    <span class="goodbye-icon">💸</span>
+                    <p class="goodbye-text" data-translate="goodbye.expensive">No more inflated taxi costs or gas expenses</p>
+                </div>
+                <div class="goodbye-item">
+                    <span class="goodbye-icon">😰</span>
+                    <p class="goodbye-text" data-translate="goodbye.stress">No more stressing alone about delays or wait times</p>
+                </div>
+                <div class="goodbye-item">
+                    <span class="goodbye-icon">✈️</span>
+                    <p class="goodbye-text" data-translate="goodbye.solo">No more flying solo — travel better together</p>
+                </div>
+            </div>
+            <div class="goodbye-cta">
+                <p class="goodbye-highlight" data-translate="goodbye.cta">Start sharing rides. Start saving money. Start making connections.</p>
             </div>
         </div>
     </section>
@@ -304,8 +333,8 @@
 
     <!-- Scripts -->
     <script src="supabase-config.js"></script>
-    <script src="translations.js?v=9.0"></script>
-    <script src="app.js?v=9.0"></script>
+    <script src="translations.js?v=15.0"></script>
+    <script src="app.js?v=15.0"></script>
 
     <!-- Google Analytics (replace with your ID) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>

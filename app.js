@@ -107,7 +107,9 @@ async function handleFormSubmit(e) {
         if (error) {
             // Check if it's a duplicate email error
             if (error.code === '23505') {
-                alert('Este email ya está registrado en nuestra lista. ¡Gracias por tu interés!');
+                const currentLang = localStorage.getItem('corideLanguage') || 'en';
+                const duplicateMessage = translations[currentLang].form.duplicate;
+                alert(duplicateMessage);
                 submitButton.disabled = false;
                 submitButton.textContent = originalText;
                 return;

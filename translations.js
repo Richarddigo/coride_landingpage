@@ -1,47 +1,55 @@
 const translations = {
     en: {
-        ctaButton: "I want to try it 🚀",
+        ctaButton: "Join the beta 🚀",
         hero: {
-            title: "Share transportation with people from your flight",
-            subtitle: "Don't travel alone to the airport. Connect with passengers on your flight, share taxi or rideshare, and save up to 70% on transportation costs.",
+            title: "Share Airport Rides. Split the Cost. Travel Smart.",
+            subtitle: "Connect with passengers from your flight and share taxis or Ubers. Save up to 70% on airport transportation — it's that simple.",
             stats: {
-                early: "Early testers",
-                saved: "Avg. saved",
-                setup: "Setup time"
+                early: "Beta testers",
+                saved: "Avg. saved per flight",
+                setup: "To get started"
             }
         },
         how: {
             title: "How it works",
             step1: {
-                title: "Enter your flight",
-                desc: "Add your flight number and travel date"
+                title: "Add your flight",
+                desc: "Enter your flight number and see who else is traveling"
             },
             step2: {
-                title: "Find travel buddies",
-                desc: "See other passengers looking to share rides"
+                title: "Find ride partners",
+                desc: "Browse passengers heading the same direction as you"
             },
             step3: {
-                title: "Connect & save",
-                desc: "Chat, coordinate, and share transportation costs"
+                title: "Coordinate & split",
+                desc: "Quick chat to arrange pickup point and split the fare"
             }
         },
+        goodbye: {
+            title: "Stop Overpaying for Airport Rides",
+            lonely: "No more expensive solo taxi rides to the airport",
+            expensive: "No more paying full price when you can split it",
+            stress: "No more worrying about finding reliable shared rides",
+            solo: "No more wasted money — coordinate and save",
+            cta: "Share rides. Split costs. Arrive smart."
+        },
         benefits: {
-            title: "Why Coride?",
+            title: "Why travelers choose Coride",
             save: {
-                title: "Save money",
-                desc: "Split taxi, Uber or rideshare costs with other passengers"
+                title: "Save Money",
+                desc: "Split Uber or taxi costs with flight passengers. Save €20-60 per trip on average."
             },
             eco: {
-                title: "Be sustainable",
-                desc: "Reduce carbon footprint by sharing vehicles"
+                title: "Be Sustainable",
+                desc: "Fewer vehicles, lower emissions. Good for your wallet and the planet."
             },
             social: {
-                title: "Make connections",
-                desc: "Meet interesting people from your same flight"
+                title: "Simple Coordination",
+                desc: "Easy chat with passengers from your flight. Coordinate pickup, split fare, done."
             },
             safe: {
-                title: "Travel safely",
-                desc: "Verified users from the same flight"
+                title: "Verified Users",
+                desc: "Only real passengers from your flight. Secure, simple, reliable."
             }
         },
         testimonials: {
@@ -61,8 +69,8 @@ const translations = {
                 name: "Laura S.",
                 detail: "Barcelona → Valencia"
             },
-            airports: "Currently testing in:",
-            more: "+ more coming"
+            airports: "Available at any airport worldwide",
+            more: "Connect with travelers wherever you fly ✈️"
         },
         cta: {
             title: "Join the first 50 testers",
@@ -82,6 +90,7 @@ const translations = {
             beta: "I want to be a beta tester",
             submit: "Join waitlist",
             privacy: "We respect your privacy. No spam, ever.",
+            duplicate: "This email is already registered on our list. Thank you for your interest!",
             success: {
                 title: "Welcome aboard!",
                 message: "You're on the list. We'll contact you soon with early access."
@@ -89,48 +98,56 @@ const translations = {
         }
     },
     es: {
-        ctaButton: "Quiero probarlo 🚀",
+        ctaButton: "Únete a la beta 🚀",
         hero: {
-            title: "Comparte transporte con gente de tu vuelo",
-            subtitle: "No viajes solo al aeropuerto. Conecta con pasajeros de tu vuelo, comparte taxi o rideshare, y ahorra hasta un 70% en costes de transporte.",
+            title: "Comparte Taxi al Aeropuerto. Divide el Coste. Viaja Listo.",
+            subtitle: "Conecta con pasajeros de tu vuelo y comparte taxi o Uber. Ahorra hasta un 70% en transporte al aeropuerto — así de fácil.",
             stats: {
-                early: "Primeros testers",
-                saved: "Ahorro medio",
-                setup: "Tiempo de setup"
+                early: "Beta testers",
+                saved: "Ahorro medio por vuelo",
+                setup: "Para empezar"
             }
         },
         how: {
             title: "Cómo funciona",
             step1: {
-                title: "Introduce tu vuelo",
-                desc: "Añade tu número de vuelo y fecha de viaje"
+                title: "Añade tu vuelo",
+                desc: "Introduce tu número de vuelo y mira quién más viaja"
             },
             step2: {
-                title: "Encuentra compañeros",
-                desc: "Ve otros pasajeros buscando compartir viaje"
+                title: "Encuentra compañeros de ruta",
+                desc: "Busca pasajeros que van en tu misma dirección"
             },
             step3: {
-                title: "Conecta y ahorra",
-                desc: "Chatea, coordina y comparte costes de transporte"
+                title: "Coordina y divide",
+                desc: "Chat rápido para acordar punto de encuentro y dividir tarifa"
             }
         },
+        goodbye: {
+            title: "Deja de Pagar de Más por el Taxi al Aeropuerto",
+            lonely: "Se acabaron los taxis caros en solitario al aeropuerto",
+            expensive: "Se acabó pagar el precio completo cuando puedes dividirlo",
+            stress: "Se acabó buscar cómo compartir transporte de forma fiable",
+            solo: "Se acabó el dinero tirado — coordínate y ahorra",
+            cta: "Comparte trayectos. Divide costes. Llega listo."
+        },
         benefits: {
-            title: "¿Por qué Coride?",
+            title: "Por qué los viajeros eligen Coride",
             save: {
-                title: "Ahorra dinero",
-                desc: "Divide los costes de taxi, Uber o rideshare con otros pasajeros"
+                title: "Ahorra Dinero",
+                desc: "Divide el coste de Uber o taxi con pasajeros de tu vuelo. Ahorra 20-60€ de media por viaje."
             },
             eco: {
-                title: "Sé sostenible",
-                desc: "Reduce tu huella de carbono compartiendo vehículos"
+                title: "Sé Sostenible",
+                desc: "Menos vehículos, menos emisiones. Bueno para tu bolsillo y para el planeta."
             },
             social: {
-                title: "Haz conexiones",
-                desc: "Conoce gente interesante de tu mismo vuelo"
+                title: "Coordinación Simple",
+                desc: "Chat fácil con pasajeros de tu vuelo. Coordina punto de encuentro, divide tarifa, listo."
             },
             safe: {
-                title: "Viaja seguro",
-                desc: "Usuarios verificados del mismo vuelo"
+                title: "Usuarios Verificados",
+                desc: "Solo pasajeros reales de tu vuelo. Seguro, simple, fiable."
             }
         },
         testimonials: {
@@ -150,8 +167,8 @@ const translations = {
                 name: "Laura S.",
                 detail: "Barcelona → Valencia"
             },
-            airports: "Actualmente probando en:",
-            more: "+ más próximamente"
+            airports: "Disponible en cualquier aeropuerto del mundo",
+            more: "Conecta con viajeros dondequiera que vueles ✈️"
         },
         cta: {
             title: "Únete a los primeros 50 testers",
@@ -171,6 +188,7 @@ const translations = {
             beta: "Quiero ser beta tester",
             submit: "Unirme a la lista",
             privacy: "Respetamos tu privacidad. Sin spam, nunca.",
+            duplicate: "Este email ya está registrado en nuestra lista. ¡Gracias por tu interés!",
             success: {
                 title: "¡Bienvenido a bordo!",
                 message: "Estás en la lista. Te contactaremos pronto con acceso anticipado."
@@ -178,48 +196,56 @@ const translations = {
         }
     },
     de: {
-        ctaButton: "Ich möchte es ausprobieren 🚀",
+        ctaButton: "Zur Beta anmelden 🚀",
         hero: {
-            title: "Teile Transportmittel mit Leuten von deinem Flug",
-            subtitle: "Reise nicht allein zum Flughafen. Verbinde dich mit Passagieren deines Flugs, teile ein Taxi oder Rideshare und spare bis zu 70% der Transportkosten.",
+            title: "Fahrten Teilen. Kosten Teilen. Clever Reisen.",
+            subtitle: "Verbinde dich mit Passagieren deines Flugs und teilt euch Taxi oder Uber. Spare bis zu 70% beim Flughafen-Transfer — ganz einfach.",
             stats: {
-                early: "Erste Tester",
-                saved: "Durchschn. gespart",
-                setup: "Setup-Zeit"
+                early: "Beta-Tester",
+                saved: "Ø Ersparnis pro Flug",
+                setup: "Zum Loslegen"
             }
         },
         how: {
             title: "Wie es funktioniert",
             step1: {
-                title: "Gib deinen Flug ein",
-                desc: "Füge deine Flugnummer und Reisedatum hinzu"
+                title: "Flug hinzufügen",
+                desc: "Gib deine Flugnummer ein und sieh, wer noch mitfliegt"
             },
             step2: {
-                title: "Finde Reisepartner",
-                desc: "Sieh andere Passagiere, die Fahrten teilen möchten"
+                title: "Fahrpartner finden",
+                desc: "Finde Passagiere, die in die gleiche Richtung fahren"
             },
             step3: {
-                title: "Verbinde & spare",
-                desc: "Chatte, koordiniere und teile Transportkosten"
+                title: "Koordinieren & teilen",
+                desc: "Kurzer Chat für Treffpunkt und Kostenaufteilung"
             }
         },
+        goodbye: {
+            title: "Schluss mit Überteuerten Flughafen-Fahrten",
+            lonely: "Nie mehr teure Einzelfahrten zum Flughafen",
+            expensive: "Nie mehr Vollpreis zahlen, wenn du teilen kannst",
+            stress: "Nie mehr nach zuverlässigen Mitfahrgelegenheiten suchen",
+            solo: "Nie mehr Geld verschwenden — koordinieren und sparen",
+            cta: "Fahrten teilen. Kosten teilen. Clever ankommen."
+        },
         benefits: {
-            title: "Warum Coride?",
+            title: "Warum Reisende Coride wählen",
             save: {
-                title: "Geld sparen",
-                desc: "Teile Taxi-, Uber- oder Rideshare-Kosten mit anderen Passagieren"
+                title: "Geld Sparen",
+                desc: "Teilt Uber oder Taxi mit Flugpassagieren. Spart durchschnittlich 20-60€ pro Fahrt."
             },
             eco: {
-                title: "Sei nachhaltig",
-                desc: "Reduziere deinen CO2-Fußabdruck durch gemeinsame Fahrzeuge"
+                title: "Nachhaltig Sein",
+                desc: "Weniger Fahrzeuge, weniger Emissionen. Gut für Geldbeutel und Umwelt."
             },
             social: {
-                title: "Knüpfe Kontakte",
-                desc: "Triff interessante Menschen von deinem Flug"
+                title: "Einfache Koordination",
+                desc: "Unkomplizierter Chat mit Passagieren deines Flugs. Treffpunkt abstimmen, Kosten teilen, fertig."
             },
             safe: {
-                title: "Reise sicher",
-                desc: "Verifizierte Benutzer vom gleichen Flug"
+                title: "Verifizierte Nutzer",
+                desc: "Nur echte Passagiere deines Flugs. Sicher, einfach, zuverlässig."
             }
         },
         testimonials: {
@@ -239,8 +265,8 @@ const translations = {
                 name: "Laura S.",
                 detail: "Barcelona → Valencia"
             },
-            airports: "Derzeit im Test in:",
-            more: "+ weitere folgen"
+            airports: "Verfügbar an jedem Flughafen weltweit",
+            more: "Verbinde dich mit Reisenden, wo auch immer du fliegst ✈️"
         },
         cta: {
             title: "Werde einer der ersten 50 Tester",
@@ -248,7 +274,7 @@ const translations = {
             note: "✨ Frühe Tester erhalten lebenslang Premium-Funktionen"
         },
         footer: {
-            tagline: "Wege der Wunder",
+            tagline: "Wege des Staunens",
             rights: "Alle Rechte vorbehalten"
         },
         form: {
@@ -260,6 +286,7 @@ const translations = {
             beta: "Ich möchte Beta-Tester werden",
             submit: "Warteliste beitreten",
             privacy: "Wir respektieren deine Privatsphäre. Kein Spam, niemals.",
+            duplicate: "Diese E-Mail ist bereits auf unserer Liste registriert. Vielen Dank für dein Interesse!",
             success: {
                 title: "Willkommen an Bord!",
                 message: "Du bist auf der Liste. Wir kontaktieren dich bald mit frühem Zugang."
