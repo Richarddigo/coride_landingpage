@@ -40,11 +40,11 @@ function initApp() {
     const form = document.getElementById('waitlistForm');
     form.addEventListener('submit', handleFormSubmit);
 
-    // Load counter from storage (inicia en 127 si es primera vez)
-    loadCounter();
+    // Load counter from Supabase
+    loadCounterFromDatabase();
 
     // Animated counter
-    animateCounter();
+    setTimeout(() => animateCounter(), 500);
 
     // Track page view
     trackEvent('page_view', {
@@ -69,7 +69,7 @@ function closeWaitlistModal() {
     document.body.style.overflow = '';
 }
 
-// Form handling
+// Form handling with Supabase
 async function handleFormSubmit(e) {
     e.preventDefault();
 
@@ -83,68 +83,96 @@ async function handleFormSubmit(e) {
 
     const formData = {
         name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        flight: document.getElementById('flight').value || 'No especificado',
-        beta: document.getElementById('beta').checked ? 'Sí' : 'No',
-        timestamp: new Date().toISOString(),
+        email: document.getElementById('email').value.trim().toLowerCase(),
+        flight: document.getElementById('flight').value || null,
+        beta_tester: document.getElementById('beta').checked,
         language: localStorage.getItem('corideLanguage') || 'en'
     };
 
-    // Save to localStorage
-    saveToWaitlist(formData);
-
-    // Send via Web3Forms
     try {
-        const formDataToSend = new FormData(form);
-        formDataToSend.append('Idioma', formData.language);
-        formDataToSend.append('Fecha', new Date(formData.timestamp).toLocaleString());
-        formDataToSend.append('Beta Tester', formData.beta);
+        // Save to localStorage as backup
+        saveToWaitlist(formData);
 
-        const response = await fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            body: formDataToSend
+        // Check if Supabase is configured
+        if (typeof supabase === 'undefined' || SUPABASE_URL === 'TU_PROJECT_URL_AQUI') {
+            throw new Error('Supabase no configurado');
+        }
+
+        // Save to Supabase database
+        const { data, error } = await supabase
+            .from('waitlist')
+            .insert([formData])
+            .select();
+
+        if (error) {
+            // Check if it's a duplicate email error
+            if (error.code === '23505') {
+                alert('Este email ya está registrado en nuestra lista. ¡Gracias por tu interés!');
+                submitButton.disabled = false;
+                submitButton.textContent = originalText;
+                return;
+            }
+            throw error;
+        }
+
+        // Send email via Web3Forms (optional, solo si está configurado)
+        if (form.querySelector('[name="access_key"]')?.value !== 'YOUR_ACCESS_KEY_HERE') {
+            try {
+                const formDataToSend = new FormData(form);
+                formDataToSend.append('Idioma', formData.language);
+                formDataToSend.append('Beta Tester', formData.beta_tester ? 'Sí' : 'No');
+
+                await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formDataToSend
+                });
+            } catch (emailError) {
+                console.log('Email notification not sent:', emailError);
+            }
+        }
+
+        // Track conversion
+        trackEvent('waitlist_signup', {
+            email: formData.email,
+            has_flight: !!formData.flight
         });
 
-        const result = await response.json();
-
-        if (result.success) {
-            // Track conversion
-            trackEvent('waitlist_signup', {
-                email: formData.email,
-                has_flight: !!formData.flight
+        // Track Facebook Pixel conversion (if available)
+        if (typeof fbq !== 'undefined') {
+            fbq('track', 'Lead', {
+                content_name: 'Waitlist Signup',
+                status: 'completed'
             });
-
-            // Track Facebook Pixel conversion (if available)
-            if (typeof fbq !== 'undefined') {
-                fbq('track', 'Lead', {
-                    content_name: 'Waitlist Signup',
-                    status: 'completed'
-                });
-            }
-
-            // Show success message
-            showSuccessMessage();
-
-            // Update counter
-            updateCounter();
-
-            // Reset form
-            form.reset();
-        } else {
-            alert('Hubo un error al enviar el formulario. Los datos se han guardado localmente.');
-            console.error('Error:', result);
         }
+
+        // Show success message
+        showSuccessMessage();
+
+        // Reload counter from database
+        await loadCounterFromDatabase();
+
+        // Reset form
+        form.reset();
+
     } catch (error) {
         console.error('Error:', error);
-        alert('Hubo un error al enviar el formulario. Los datos se han guardado localmente.');
+
+        if (error.message === 'Supabase no configurado') {
+            alert('⚠️ Base de datos no configurada. Los datos se han guardado localmente.\n\nPor favor, configura Supabase siguiendo las instrucciones en SETUP-SUPABASE.md');
+        } else {
+            alert('Hubo un error al enviar el formulario. Los datos se han guardado localmente como backup.');
+        }
+
+        // Show success anyway (data is in localStorage)
+        showSuccessMessage();
+        form.reset();
+
     } finally {
         // Re-enable button
         submitButton.disabled = false;
         submitButton.textContent = originalText;
     }
-}
-
-// Save waitlist data
+}// Save waitlist data
 function saveToWaitlist(data) {
     // Get existing waitlist
     let waitlist = [];
@@ -209,18 +237,41 @@ function animateCounter() {
     }, stepTime);
 }
 
-// Update counter after signup
-function updateCounter() {
+// Load counter from Supabase database
+async function loadCounterFromDatabase() {
     const counter = document.getElementById('counterUsers');
-    const current = parseInt(counter.textContent);
-    counter.textContent = current + 1;
 
-    // Save to localStorage
-    localStorage.setItem('corideUserCount', current + 1);
+    try {
+        // Check if Supabase is configured
+        if (typeof supabase === 'undefined' || SUPABASE_URL === 'TU_PROJECT_URL_AQUI') {
+            // Fallback to localStorage
+            loadCounterFromLocalStorage();
+            return;
+        }
+
+        // Get count from Supabase
+        const { count, error } = await supabase
+            .from('waitlist')
+            .select('*', { count: 'exact', head: true });
+
+        if (error) throw error;
+
+        // Add base of 127 existing testers
+        const totalCount = 127 + (count || 0);
+        counter.textContent = totalCount;
+
+        // Save to localStorage as cache
+        localStorage.setItem('corideUserCount', totalCount);
+
+    } catch (error) {
+        console.error('Error loading counter from database:', error);
+        // Fallback to localStorage
+        loadCounterFromLocalStorage();
+    }
 }
 
-// Load counter from localStorage on init
-function loadCounter() {
+// Fallback: Load counter from localStorage
+function loadCounterFromLocalStorage() {
     const counter = document.getElementById('counterUsers');
     const saved = localStorage.getItem('corideUserCount');
 
@@ -230,6 +281,43 @@ function loadCounter() {
         // Iniciar con 127 testers existentes
         counter.textContent = '127';
         localStorage.setItem('corideUserCount', '127');
+    }
+}
+
+// Download all users from database (for admin use)
+async function downloadAllUsers() {
+    try {
+        if (typeof supabase === 'undefined' || SUPABASE_URL === 'TU_PROJECT_URL_AQUI') {
+            alert('Supabase no configurado. Por favor configura la base de datos primero.');
+            return;
+        }
+
+        const { data, error } = await supabase
+            .from('waitlist')
+            .select('*')
+            .order('created_at', { ascending: false });
+
+        if (error) throw error;
+
+        // Create CSV content
+        let csvContent = 'ID,Nombre,Email,Vuelo,Beta Tester,Idioma,Fecha\n';
+        data.forEach(row => {
+            csvContent += `${row.id},"${row.name}","${row.email}","${row.flight || ''}",${row.beta_tester ? 'Sí' : 'No'},${row.language},"${new Date(row.created_at).toLocaleString()}"\n`;
+        });
+
+        // Download CSV
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = `coride-waitlist-${new Date().toISOString().split('T')[0]}.csv`;
+        link.click();
+        URL.revokeObjectURL(url);
+
+        console.log(`✅ Descargados ${data.length} registros`);
+    } catch (error) {
+        console.error('Error downloading users:', error);
+        alert('Error al descargar la lista de usuarios. Revisa la consola para más detalles.');
     }
 }
 
