@@ -18,7 +18,7 @@
 
     <title>Coride - Share airport rides and split costs</title>
     <link rel="icon" type="image/svg+xml" href="assets/images/mountain_black.svg">
-    <link rel="stylesheet" href="styles.css?v=16.0">
+    <link rel="stylesheet" href="styles.css?v=17.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -266,6 +266,45 @@
         </div>
     </section>
 
+    <!-- Feedback Section -->
+    <section class="feedback-section">
+        <div class="container">
+            <div class="feedback-container">
+                <h2 class="feedback-title" data-translate="feedback.title">Got suggestions or ideas?</h2>
+                <p class="feedback-subtitle" data-translate="feedback.subtitle">Send us your feedback, business proposals, or improvement ideas. We'd love to hear from you.</p>
+
+                <form class="feedback-form" id="feedbackForm">
+                    <div class="form-group">
+                        <label for="feedback-name" data-translate="feedback.form.name">Name</label>
+                        <input type="text" id="feedback-name" name="name" required placeholder="Your name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="feedback-email" data-translate="feedback.form.email">Email</label>
+                        <input type="email" id="feedback-email" name="email" required placeholder="your@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="feedback-message" data-translate="feedback.form.message">Message</label>
+                        <textarea id="feedback-message" name="message" required rows="6" placeholder="Share your thoughts, ideas, or proposals..."></textarea>
+                    </div>
+
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="feedback-updates" name="updates">
+                        <label for="feedback-updates" data-translate="feedback.form.updates">I want to receive updates about Coride</label>
+                    </div>
+
+                    <button type="submit" class="feedback-submit" data-translate="feedback.form.submit">Send message</button>
+                </form>
+
+                <div class="feedback-success" id="feedbackSuccess">
+                    <div class="success-icon">✅</div>
+                    <p data-translate="feedback.success">Thank you! We've received your message.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -331,8 +370,8 @@
 
     <!-- Scripts -->
     <script src="supabase-config.js"></script>
-    <script src="translations.js?v=16.0"></script>
-    <script src="app.js?v=16.0"></script>
+    <script src="translations.js?v=17.0"></script>
+    <script src="app.js?v=17.0"></script>
 
     <!-- Google Analytics (replace with your ID) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>

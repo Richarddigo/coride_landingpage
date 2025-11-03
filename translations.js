@@ -78,6 +78,18 @@ const translations = {
             subtitle: "Get exclusive early access and start saving on airport rides immediately",
             note: "🎁 First 50 testers unlock lifetime premium features — forever free"
         },
+        feedback: {
+            title: "Got suggestions or ideas?",
+            subtitle: "Send us your feedback, business proposals, or improvement ideas. We'd love to hear from you.",
+            form: {
+                name: "Name",
+                email: "Email",
+                message: "Message",
+                updates: "I want to receive updates about Coride",
+                submit: "Send message"
+            },
+            success: "Thank you! We've received your message."
+        },
         footer: {
             tagline: "Paths of Wonder",
             rights: "All rights reserved"
@@ -177,6 +189,18 @@ const translations = {
             subtitle: "Consigue acceso exclusivo anticipado y empieza a ahorrar en tus trayectos al aeropuerto ahora mismo",
             note: "🎁 Los primeros 50 testers desbloquean funciones premium de por vida — gratis para siempre"
         },
+        feedback: {
+            title: "¿Tienes sugerencias o ideas?",
+            subtitle: "Envía tus comentarios, propuestas de negocio o ideas de mejora. Nos encantaría recibir tu mensaje.",
+            form: {
+                name: "Nombre",
+                email: "Email",
+                message: "Mensaje",
+                updates: "Quiero recibir actualizaciones sobre Coride",
+                submit: "Enviar mensaje"
+            },
+            success: "¡Gracias! Hemos recibido tu mensaje."
+        },
         footer: {
             tagline: "Caminos de Maravilla",
             rights: "Todos los derechos reservados"
@@ -275,6 +299,18 @@ const translations = {
             title: "Werde Einer der Ersten 50 Beta-Tester",
             subtitle: "Sichere dir exklusiven Früh-Zugang und spare sofort bei Flughafen-Fahrten",
             note: "🎁 Die ersten 50 Tester erhalten Premium-Features auf Lebenszeit — für immer kostenlos"
+        },
+        feedback: {
+            title: "Hast du Vorschläge oder Ideen?",
+            subtitle: "Sende uns dein Feedback, Geschäftsvorschläge oder Verbesserungsideen. Wir freuen uns auf deine Nachricht.",
+            form: {
+                name: "Name",
+                email: "E-Mail",
+                message: "Nachricht",
+                updates: "Ich möchte Updates über Coride erhalten",
+                submit: "Nachricht senden"
+            },
+            success: "Vielen Dank! Wir haben deine Nachricht erhalten."
         },
         footer: {
             tagline: "Wege des Staunens",

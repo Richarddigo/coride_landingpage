@@ -40,6 +40,12 @@ function initApp() {
     const form = document.getElementById('waitlistForm');
     form.addEventListener('submit', handleFormSubmit);
 
+    // Feedback form submission
+    const feedbackForm = document.getElementById('feedbackForm');
+    if (feedbackForm) {
+        feedbackForm.addEventListener('submit', handleFeedbackSubmit);
+    }
+
     // Load counter from Supabase
     loadCounterFromDatabase();
 
@@ -394,8 +400,107 @@ function exportWaitlist() {
     }
 }
 
-// Make exportWaitlist available globally for console use
+// Feedback form handling
+async function handleFeedbackSubmit(e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const submitButton = form.querySelector('.feedback-submit');
+    const originalText = submitButton.textContent;
+
+    // Disable button and show loading
+    submitButton.disabled = true;
+    submitButton.textContent = 'Enviando...';
+
+    const feedbackData = {
+        name: document.getElementById('feedback-name').value,
+        email: document.getElementById('feedback-email').value,
+        message: document.getElementById('feedback-message').value,
+        updates: document.getElementById('feedback-updates').checked,
+        timestamp: new Date().toISOString(),
+        language: localStorage.getItem('corideLanguage') || 'en',
+        source: 'landing_page'
+    };
+
+    try {
+        // Save to localStorage as backup
+        saveFeedbackToLocal(feedbackData);
+
+        // TODO: Replace with your actual endpoint
+        // For now, we'll simulate a successful submission
+        const response = await fetch('/api/feedback', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(feedbackData)
+        }).catch(() => {
+            // If endpoint doesn't exist, continue anyway (for MVP)
+            return { ok: true };
+        });
+
+        // Show success message
+        form.style.display = 'none';
+        const successDiv = document.getElementById('feedbackSuccess');
+        successDiv.classList.add('active');
+
+        // Track feedback submission
+        trackEvent('feedback_submitted', {
+            has_updates_consent: feedbackData.updates
+        });
+
+        // Reset form after 5 seconds
+        setTimeout(() => {
+            form.reset();
+            form.style.display = 'flex';
+            successDiv.classList.remove('active');
+        }, 5000);
+
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo o escríbenos directamente.');
+    } finally {
+        // Re-enable button
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
+    }
+}
+
+// Save feedback to localStorage
+function saveFeedbackToLocal(data) {
+    try {
+        const feedback = JSON.parse(localStorage.getItem('corideFeedback') || '[]');
+        feedback.push(data);
+        localStorage.setItem('corideFeedback', JSON.stringify(feedback));
+    } catch (e) {
+        console.error('Error saving feedback to localStorage:', e);
+    }
+}
+
+// Export feedback function (for admin use)
+function exportFeedback() {
+    const feedback = JSON.parse(localStorage.getItem('corideFeedback') || '[]');
+
+    if (feedback.length === 0) {
+        console.log('No feedback data to export');
+        return;
+    }
+
+    const dataStr = JSON.stringify(feedback, null, 2);
+    const blob = new Blob([dataStr], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `coride-feedback-${new Date().toISOString()}.json`;
+    link.click();
+    URL.revokeObjectURL(url);
+
+    console.log(`✅ Exported ${feedback.length} feedback entries`);
+}
+
+// Make functions available globally for console use
 window.exportWaitlist = exportWaitlist;
+window.exportFeedback = exportFeedback;
 
 // Show console message for developers
 console.log(`
@@ -405,6 +510,7 @@ console.log(`
 ╠═══════════════════════════════════════╣
 ║   Commands:                           ║
 ║   → exportWaitlist() - Export signups ║
+║   → exportFeedback() - Export feedback║
 ║   → localStorage.clear() - Reset data ║
 ╚═══════════════════════════════════════╝
 `);

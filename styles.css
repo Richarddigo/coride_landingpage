@@ -731,6 +731,161 @@ body {
     opacity: 0.9;
 }
 
+/* Feedback Section */
+.feedback-section {
+    padding: 80px 0;
+    background: var(--light);
+}
+
+.feedback-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.feedback-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--dark);
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.feedback-subtitle {
+    font-size: 16px;
+    color: var(--gray);
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.feedback-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.feedback-form label {
+    font-weight: 600;
+    color: var(--dark);
+    font-size: 14px;
+}
+
+.feedback-form input[type="text"],
+.feedback-form input[type="email"],
+.feedback-form textarea {
+    padding: 14px 16px;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: inherit;
+    transition: all 0.2s ease;
+    background: white;
+}
+
+.feedback-form input[type="text"]:focus,
+.feedback-form input[type="email"]:focus,
+.feedback-form textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(59, 89, 152, 0.1);
+}
+
+.feedback-form textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.feedback-form .form-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.feedback-form .form-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.feedback-form .form-checkbox label {
+    font-weight: 400;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.feedback-submit {
+    padding: 16px 32px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.feedback-submit:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 89, 152, 0.3);
+}
+
+.feedback-submit:active {
+    transform: translateY(0);
+}
+
+.feedback-success {
+    display: none;
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.feedback-success.active {
+    display: block;
+    animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feedback-success .success-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+.feedback-success p {
+    font-size: 18px;
+    font-weight: 600;
+    color: #155724;
+    margin: 0;
+}
+
 /* Footer */
 .footer {
     background: var(--dark);
@@ -1100,6 +1255,18 @@ body {
     .cta-btn-header {
         padding: 8px 18px;
         font-size: 14px;
+    }
+
+    .feedback-container {
+        padding: 35px 25px;
+    }
+
+    .feedback-title {
+        font-size: 26px;
+    }
+
+    .feedback-subtitle {
+        font-size: 15px;
     }
 
     .modal-content {
