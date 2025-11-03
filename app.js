@@ -70,14 +70,22 @@ function closeWaitlistModal() {
 }
 
 // Form handling
-function handleFormSubmit(e) {
+async function handleFormSubmit(e) {
     e.preventDefault();
+
+    const form = e.target;
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent;
+
+    // Disable button and show loading
+    submitButton.disabled = true;
+    submitButton.textContent = 'Enviando...';
 
     const formData = {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
-        flight: document.getElementById('flight').value,
-        beta: document.getElementById('beta').checked,
+        flight: document.getElementById('flight').value || 'No especificado',
+        beta: document.getElementById('beta').checked ? 'Sí' : 'No',
         timestamp: new Date().toISOString(),
         language: localStorage.getItem('corideLanguage') || 'en'
     };
@@ -85,55 +93,54 @@ function handleFormSubmit(e) {
     // Save to localStorage
     saveToWaitlist(formData);
 
-    // Send email notification to you
-    sendEmailNotification(formData);
-
-    // Track conversion
-    trackEvent('waitlist_signup', {
-        email: formData.email,
-        has_flight: !!formData.flight
-    });
-
-    // Track Facebook Pixel conversion (if available)
-    if (typeof fbq !== 'undefined') {
-        fbq('track', 'Lead', {
-            content_name: 'Waitlist Signup',
-            status: 'completed'
-        });
-    }
-
-    // Show success message
-    showSuccessMessage();
-
-    // Update counter
-    updateCounter();
-}
-
-// Send email notification
-function sendEmailNotification(data) {
-    const subject = encodeURIComponent('🚀 Nuevo registro en Coride Waitlist');
-    const body = encodeURIComponent(`
-Nuevo registro en la waitlist de Coride:
-
-Nombre: ${data.name}
-Email: ${data.email}
-Próximo vuelo: ${data.flight || 'No especificado'}
-Beta tester: ${data.beta ? 'Sí' : 'No'}
-Idioma: ${data.language}
-Fecha: ${new Date(data.timestamp).toLocaleString()}
-
----
-Enviado desde: ${window.location.href}
-    `);
-
-    // Open email client (fallback method)
-    const mailtoLink = `mailto:richarddigo@gmail.com?subject=${subject}&body=${body}`;
-
-    // Try to open in new window silently
+    // Send via Web3Forms
     try {
-        window.open(mailtoLink, '_blank');
-    } catch (e) {
-        console.log('Email notification created for:', data.email);
+        const formDataToSend = new FormData(form);
+        formDataToSend.append('Idioma', formData.language);
+        formDataToSend.append('Fecha', new Date(formData.timestamp).toLocaleString());
+        formDataToSend.append('Beta Tester', formData.beta);
+
+        const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formDataToSend
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            // Track conversion
+            trackEvent('waitlist_signup', {
+                email: formData.email,
+                has_flight: !!formData.flight
+            });
+
+            // Track Facebook Pixel conversion (if available)
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead', {
+                    content_name: 'Waitlist Signup',
+                    status: 'completed'
+                });
+            }
+
+            // Show success message
+            showSuccessMessage();
+
+            // Update counter
+            updateCounter();
+
+            // Reset form
+            form.reset();
+        } else {
+            alert('Hubo un error al enviar el formulario. Los datos se han guardado localmente.');
+            console.error('Error:', result);
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Hubo un error al enviar el formulario. Los datos se han guardado localmente.');
+    } finally {
+        // Re-enable button
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
     }
 }
 
