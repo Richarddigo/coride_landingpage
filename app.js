@@ -426,10 +426,12 @@ async function handleFeedbackSubmit(e) {
         saveFeedbackToLocal(feedbackData);
 
         // Check if Supabase is configured
-        if (typeof supabase === 'undefined' || SUPABASE_URL === 'TU_PROJECT_URL_AQUI') {
-            console.warn('⚠️ Supabase no configurado - Feedback guardado solo en localStorage');
-            throw new Error('Supabase no configurado');
+        if (typeof supabase === 'undefined') {
+            console.error('❌ Supabase no está definido - verifica que supabase-config.js se carga correctamente');
+            throw new Error('Supabase no definido');
         }
+
+        console.log('📤 Enviando feedback a Supabase...');
 
         // Save to Supabase database
         const { data, error } = await supabase
@@ -438,7 +440,17 @@ async function handleFeedbackSubmit(e) {
             .select();
 
         if (error) {
-            console.error('Supabase error:', error);
+            console.error('❌ Error de Supabase:', error);
+            console.error('Código de error:', error.code);
+            console.error('Mensaje:', error.message);
+            console.error('Detalles:', error.details);
+
+            // Mensaje específico para tabla no existente
+            if (error.code === '42P01') {
+                console.error('🚨 LA TABLA "feedback" NO EXISTE EN SUPABASE');
+                console.error('📖 Ejecuta el script SQL de SETUP-FEEDBACK-SUPABASE.md para crear la tabla');
+            }
+
             throw error;
         }
 
