@@ -52,11 +52,7 @@ function initApp() {
     // Animated counter
     setTimeout(() => animateCounter(), 500);
 
-    // Track page view
-    trackEvent('page_view', {
-        page_title: document.title,
-        page_location: window.location.href
-    });
+
 }
 
 // Modal functions
@@ -75,7 +71,7 @@ function closeWaitlistModal() {
     document.body.style.overflow = '';
 }
 
-// Form handling with Supabase
+// Form handling with Supabase and Web3Forms
 async function handleFormSubmit(e) {
     e.preventDefault();
 
@@ -99,43 +95,50 @@ async function handleFormSubmit(e) {
         // Save to localStorage as backup
         saveToWaitlist(formData);
 
-        // Check if Supabase is configured
-        if (typeof supabase === 'undefined' || SUPABASE_URL === 'TU_PROJECT_URL_AQUI') {
-            throw new Error('Supabase no configurado');
-        }
+        // 1. Save to Supabase database
+        if (typeof supabase !== 'undefined' && SUPABASE_URL !== 'TU_PROJECT_URL_AQUI') {
+            const { data, error } = await supabase
+                .from('waitlist')
+                .insert([formData])
+                .select();
 
-        // Save to Supabase database
-        const { data, error } = await supabase
-            .from('waitlist')
-            .insert([formData])
-            .select();
-
-        if (error) {
-            // Check if it's a duplicate email error
-            if (error.code === '23505') {
-                const currentLang = localStorage.getItem('corideLanguage') || 'en';
-                const duplicateMessage = translations[currentLang].form.duplicate;
-                alert(duplicateMessage);
-                submitButton.disabled = false;
-                submitButton.textContent = originalText;
-                return;
+            if (error) {
+                // Check if it's a duplicate email error
+                if (error.code === '23505') {
+                    const currentLang = localStorage.getItem('corideLanguage') || 'en';
+                    const duplicateMessage = translations[currentLang].form.duplicate;
+                    alert(duplicateMessage);
+                    submitButton.disabled = false;
+                    submitButton.textContent = originalText;
+                    return;
+                }
+                console.error('Supabase error:', error);
+            } else {
+                console.log('✅ Saved to Supabase:', data);
             }
-            throw error;
         }
 
-        // Send email via Web3Forms (optional, solo si está configurado)
-        if (form.querySelector('[name="access_key"]')?.value !== 'YOUR_ACCESS_KEY_HERE') {
+        // 2. Send email via Web3Forms
+        const accessKey = form.querySelector('[name="access_key"]')?.value;
+        if (accessKey && accessKey !== 'YOUR_ACCESS_KEY_HERE') {
             try {
                 const formDataToSend = new FormData(form);
                 formDataToSend.append('Idioma', formData.language);
                 formDataToSend.append('Beta Tester', formData.beta_tester ? 'Sí' : 'No');
 
-                await fetch('https://api.web3forms.com/submit', {
+                const response = await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
                     body: formDataToSend
                 });
+
+                const result = await response.json();
+                if (result.success) {
+                    console.log('✅ Email sent via Web3Forms');
+                } else {
+                    console.error('Web3Forms error:', result);
+                }
             } catch (emailError) {
-                console.log('Email notification not sent:', emailError);
+                console.error('Email notification error:', emailError);
             }
         }
 
@@ -144,14 +147,6 @@ async function handleFormSubmit(e) {
             email: formData.email,
             has_flight: !!formData.flight
         });
-
-        // Track Facebook Pixel conversion (if available)
-        if (typeof fbq !== 'undefined') {
-            fbq('track', 'Lead', {
-                content_name: 'Waitlist Signup',
-                status: 'completed'
-            });
-        }
 
         // Show success message
         showSuccessMessage();
@@ -164,12 +159,7 @@ async function handleFormSubmit(e) {
 
     } catch (error) {
         console.error('Error:', error);
-
-        if (error.message === 'Supabase no configurado') {
-            alert('⚠️ Base de datos no configurada. Los datos se han guardado localmente.\n\nPor favor, configura Supabase siguiendo las instrucciones en SETUP-SUPABASE.md');
-        } else {
-            alert('Hubo un error al enviar el formulario. Los datos se han guardado localmente como backup.');
-        }
+        alert('Hubo un error al enviar el formulario. Los datos se han guardado localmente como backup.');
 
         // Show success anyway (data is in localStorage)
         showSuccessMessage();
@@ -225,9 +215,13 @@ function showSuccessMessage() {
     }, 3000);
 }
 
-// Counter animation
+// Animated counter
 function animateCounter() {
     const counter = document.getElementById('counterUsers');
+
+    // Si el elemento no existe, salir silenciosamente
+    if (!counter) return;
+
     const target = parseInt(counter.textContent);
     let current = 0;
     const increment = Math.ceil(target / 50);
@@ -248,6 +242,9 @@ function animateCounter() {
 // Load counter from Supabase database
 async function loadCounterFromDatabase() {
     const counter = document.getElementById('counterUsers');
+
+    // Si el elemento no existe, salir silenciosamente
+    if (!counter) return;
 
     try {
         // Check if Supabase is configured
@@ -281,6 +278,10 @@ async function loadCounterFromDatabase() {
 // Fallback: Load counter from localStorage
 function loadCounterFromLocalStorage() {
     const counter = document.getElementById('counterUsers');
+
+    // Si el elemento no existe, salir silenciosamente
+    if (!counter) return;
+
     const saved = localStorage.getItem('corideUserCount');
 
     if (saved) {
@@ -331,21 +332,11 @@ async function downloadAllUsers() {
 
 // Analytics tracking helper
 function trackEvent(eventName, params = {}) {
-    // Google Analytics
-    if (typeof gtag !== 'undefined') {
-        gtag('event', eventName, params);
-    }
-
-    // Facebook Pixel
-    if (typeof fbq !== 'undefined') {
-        fbq('trackCustom', eventName, params);
-    }
-
     // Console log for debugging
     console.log('📊 Event tracked:', eventName, params);
 }
 
-// Smooth scroll for anchor links (if you add them)
+// Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -357,30 +348,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
     });
-});
-
-// Track scroll depth
-let scrollDepth = 0;
-window.addEventListener('scroll', () => {
-    const windowHeight = window.innerHeight;
-    const documentHeight = document.documentElement.scrollHeight;
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const scrollPercent = (scrollTop / (documentHeight - windowHeight)) * 100;
-
-    // Track 25%, 50%, 75%, 100% scroll milestones
-    if (scrollPercent > 25 && scrollDepth < 25) {
-        scrollDepth = 25;
-        trackEvent('scroll_depth', { depth: '25%' });
-    } else if (scrollPercent > 50 && scrollDepth < 50) {
-        scrollDepth = 50;
-        trackEvent('scroll_depth', { depth: '50%' });
-    } else if (scrollPercent > 75 && scrollDepth < 75) {
-        scrollDepth = 75;
-        trackEvent('scroll_depth', { depth: '75%' });
-    } else if (scrollPercent > 95 && scrollDepth < 100) {
-        scrollDepth = 100;
-        trackEvent('scroll_depth', { depth: '100%' });
-    }
 });
 
 // Function to export waitlist data (for admin use)
@@ -400,7 +367,7 @@ function exportWaitlist() {
     }
 }
 
-// Feedback form handling
+// Feedback form handling with Supabase and Web3Forms
 async function handleFeedbackSubmit(e) {
     e.preventDefault();
 
@@ -425,36 +392,43 @@ async function handleFeedbackSubmit(e) {
         // Save to localStorage as backup
         saveFeedbackToLocal(feedbackData);
 
-        // Check if Supabase is configured
-        if (typeof supabase === 'undefined') {
-            console.error('❌ Supabase no está definido - verifica que supabase-config.js se carga correctamente');
-            throw new Error('Supabase no definido');
-        }
+        // 1. Save to Supabase database
+        if (typeof supabase !== 'undefined' && SUPABASE_URL !== 'TU_PROJECT_URL_AQUI') {
+            const { data, error } = await supabase
+                .from('feedback')
+                .insert([feedbackData])
+                .select();
 
-        console.log('📤 Enviando feedback a Supabase...');
-
-        // Save to Supabase database
-        const { data, error } = await supabase
-            .from('feedback')
-            .insert([feedbackData])
-            .select();
-
-        if (error) {
-            console.error('❌ Error de Supabase:', error);
-            console.error('Código de error:', error.code);
-            console.error('Mensaje:', error.message);
-            console.error('Detalles:', error.details);
-
-            // Mensaje específico para tabla no existente
-            if (error.code === '42P01') {
-                console.error('🚨 LA TABLA "feedback" NO EXISTE EN SUPABASE');
-                console.error('📖 Ejecuta el script SQL de SETUP-FEEDBACK-SUPABASE.md para crear la tabla');
+            if (error) {
+                console.error('Supabase error:', error);
+            } else {
+                console.log('✅ Saved to Supabase:', data);
             }
-
-            throw error;
         }
 
-        console.log('✅ Feedback guardado en Supabase:', data);
+        // 2. Send email via Web3Forms
+        const accessKey = form.querySelector('[name="access_key"]')?.value;
+        if (accessKey && accessKey !== 'YOUR_ACCESS_KEY_HERE') {
+            try {
+                const formDataToSend = new FormData(form);
+                formDataToSend.append('Idioma', feedbackData.language);
+                formDataToSend.append('Quiere actualizaciones', feedbackData.wants_updates ? 'Sí' : 'No');
+
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formDataToSend
+                });
+
+                const result = await response.json();
+                if (result.success) {
+                    console.log('✅ Email sent via Web3Forms');
+                } else {
+                    console.error('Web3Forms error:', result);
+                }
+            } catch (emailError) {
+                console.error('Email notification error:', emailError);
+            }
+        }
 
         // Show success message
         form.style.display = 'none';
@@ -561,16 +535,8 @@ async function exportFeedback() {
 // Make functions available globally for console use
 window.exportWaitlist = exportWaitlist;
 window.exportFeedback = exportFeedback;
+window.downloadAllUsers = downloadAllUsers;
 
 // Show console message for developers
-console.log(`
-╔═══════════════════════════════════════╗
-║   🚀 Coride MVP - Landing Page       ║
-║   Built for validation testing        ║
-╠═══════════════════════════════════════╣
-║   Commands:                           ║
-║   → exportWaitlist() - Export signups ║
-║   → exportFeedback() - Export feedback║
-║   → localStorage.clear() - Reset data ║
-╚═══════════════════════════════════════╝
-`);
+console.log('%c🚀 CoRide Landing Page', 'color: #3b5998; font-size: 16px; font-weight: bold;');
+console.log('Commands: exportWaitlist() | exportFeedback() | downloadAllUsers()');

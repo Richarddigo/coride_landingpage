@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Supabase Client -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -240,6 +237,10 @@
                 <p class="feedback-subtitle" data-translate="feedback.subtitle">Send us your feedback, business proposals, or improvement ideas. We'd love to hear from you.</p>
 
                 <form class="feedback-form" id="feedbackForm">
+                    <input type="hidden" name="access_key" value="50e0b42a-ec9f-4117-8728-41b94196db89">
+                    <input type="hidden" name="subject" value="Nuevo mensaje - CoRide Feedback">
+                    <input type="hidden" name="from_name" value="CoRide Feedback Form">
+
                     <div class="form-group">
                         <label for="feedback-name" data-translate="feedback.form.name">Name</label>
                         <input type="text" id="feedback-name" name="name" required placeholder="Your name">
@@ -297,9 +298,8 @@
 
             <form class="waitlist-form" id="waitlistForm">
                 <input type="hidden" name="access_key" value="50e0b42a-ec9f-4117-8728-41b94196db89">
-                <input type="hidden" name="subject" value="🚀 Nuevo registro en Coride Waitlist">
-                <input type="hidden" name="redirect" value="https://richarddigo.github.io/coride_landingpage/?success=true">
-                <input type="hidden" name="from_name" value="Coride Landing Page">
+                <input type="hidden" name="subject" value="Nueva suscripción - CoRide Waitlist">
+                <input type="hidden" name="from_name" value="CoRide Landing Page">
 
                 <div class="form-group">
                     <label for="name" data-translate="form.name">Name</label>
@@ -336,35 +336,8 @@
 
     <!-- Scripts -->
     <script src="supabase-config.js"></script>
-    <script src="translations.js?v=21.0"></script>
-    <script src="app.js?v=21.0"></script>
-
-    <!-- Google Analytics (replace with your ID) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
-    </script>
-
-    <!-- Meta Pixel (replace with your Pixel ID) -->
-    <script>
-        !function (f, b, e, v, n, t, s) {
-            if (f.fbq) return; n = f.fbq = function () {
-                n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-            n.queue = []; t = b.createElement(e); t.async = !0;
-            t.src = v; s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', 'YOUR_PIXEL_ID');
-        fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1" /></noscript>
+    <script src="translations.js?v=22.0"></script>
+    <script src="app.js?v=22.0"></script>
 </body>
 
 </html>
