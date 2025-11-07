@@ -34,7 +34,7 @@ const translations = {
             cta: "Share rides. Split costs. Arrive smart."
         },
         benefits: {
-            title: "Why travelers choose CoRide",
+            title: "Why travelers choose Cojauny",
             save: {
                 title: "Save Money",
                 desc: "Split Uber or taxi costs with flight passengers. Save €20-60 per trip on average."
@@ -53,7 +53,7 @@ const translations = {
             }
         },
         socialProof: {
-            travelers: "Travelers already waiting to try CoRide",
+            travelers: "Travelers already waiting to try Cojauny",
             title: "Join the first testers",
             subtitle: "Be part of the community that's changing how we travel to airports. Save money, travel smarter.",
             airports: "Available at any airport worldwide",
@@ -71,7 +71,7 @@ const translations = {
                 name: "Name",
                 email: "Email",
                 message: "Message",
-                updates: "I want to receive updates about CoRide",
+                updates: "I want to receive updates about Cojauny",
                 submit: "Send message"
             },
             success: "Thank you! We've received your message."
@@ -82,7 +82,7 @@ const translations = {
         },
         form: {
             title: "Join the beta! 🚀",
-            subtitle: "Be among the first to try CoRide and travel smarter",
+            subtitle: "Be among the first to try Cojauny and travel smarter",
             name: "Name",
             email: "Email",
             flight: "Next flight (optional)",
@@ -131,7 +131,7 @@ const translations = {
             cta: "Comparte trayectos. Divide costes. Llega listo."
         },
         benefits: {
-            title: "Por qué los viajeros eligen CoRide",
+            title: "Por qué los viajeros eligen Cojauny",
             save: {
                 title: "Ahorra Dinero",
                 desc: "Divide el coste de Uber o taxi con pasajeros de tu vuelo. Ahorra 20-60€ de media por viaje."
@@ -150,7 +150,7 @@ const translations = {
             }
         },
         socialProof: {
-            travelers: "Viajeros ya esperando para probar CoRide",
+            travelers: "Viajeros ya esperando para probar Cojauny",
             title: "Únete a los primeros testers",
             subtitle: "Forma parte de la comunidad que está cambiando cómo viajamos a los aeropuertos. Ahorra dinero, viaja más inteligente.",
             airports: "Disponible en cualquier aeropuerto del mundo",
@@ -168,7 +168,7 @@ const translations = {
                 name: "Nombre",
                 email: "Email",
                 message: "Mensaje",
-                updates: "Quiero recibir actualizaciones sobre CoRide",
+                updates: "Quiero recibir actualizaciones sobre Cojauny",
                 submit: "Enviar mensaje"
             },
             success: "¡Gracias! Hemos recibido tu mensaje."
@@ -179,7 +179,7 @@ const translations = {
         },
         form: {
             title: "¡Únete a la beta! 🚀",
-            subtitle: "Sé de los primeros en probar CoRide y viajar más inteligente",
+            subtitle: "Sé de los primeros en probar Cojauny y viajar más inteligente",
             name: "Nombre",
             email: "Correo electrónico",
             flight: "Próximo vuelo (opcional)",
@@ -228,7 +228,7 @@ const translations = {
             cta: "Fahrten teilen. Kosten teilen. Clever ankommen."
         },
         benefits: {
-            title: "Warum Reisende CoRide wählen",
+            title: "Warum Reisende Cojauny wählen",
             save: {
                 title: "Geld Sparen",
                 desc: "Teilt Uber oder Taxi mit Flugpassagieren. Spart durchschnittlich 20-60€ pro Fahrt."
@@ -247,7 +247,7 @@ const translations = {
             }
         },
         socialProof: {
-            travelers: "Reisende warten bereits darauf, CoRide auszuprobieren",
+            travelers: "Reisende warten bereits darauf, Cojauny auszuprobieren",
             title: "Werde einer der ersten Tester",
             subtitle: "Sei Teil der Community, die verändert, wie wir zu Flughäfen reisen. Spare Geld, reise smarter.",
             airports: "Verfügbar an jedem Flughafen weltweit",
@@ -265,7 +265,7 @@ const translations = {
                 name: "Name",
                 email: "E-Mail",
                 message: "Nachricht",
-                updates: "Ich möchte Updates über CoRide erhalten",
+                updates: "Ich möchte Updates über Cojauny erhalten",
                 submit: "Nachricht senden"
             },
             success: "Vielen Dank! Wir haben deine Nachricht erhalten."
@@ -276,7 +276,7 @@ const translations = {
         },
         form: {
             title: "Tritt der Beta bei! 🚀",
-            subtitle: "Sei einer der Ersten, die CoRide ausprobieren und smarter reisen",
+            subtitle: "Sei einer der Ersten, die Cojauny ausprobieren und smarter reisen",
             name: "Name",
             email: "E-Mail",
             flight: "Nächster Flug (optional)",
@@ -318,7 +318,7 @@ function translatePage(lang) {
     });
 
     // Save language preference
-    localStorage.setItem('corideLanguage', lang);
+    localStorage.setItem('cojaunyLanguage', lang);
 
     // Update active language button
     document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -335,7 +335,7 @@ function translatePage(lang) {
 // Initialize language
 function initLanguage() {
     // Check if language is saved
-    let savedLang = localStorage.getItem('corideLanguage');
+    let savedLang = localStorage.getItem('cojaunyLanguage');
 
     // If no saved language, detect browser language
     if (!savedLang) {

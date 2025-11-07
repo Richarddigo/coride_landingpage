@@ -4,18 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Coride: Share transportation with people from your flight. Save money, make friends, travel better.">
+    <meta name="description" content="Cojauny: Share transportation with people from your flight. Save money, travel better.">
     <meta name="keywords" content="rideshare, airport, transportation, travel, carpool">
 
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Coride - Share rides with your flight">
+    <meta property="og:title" content="Cojauny - Share rides with your flight">
     <meta property="og:description" content="Connect with travelers on your flight and share transportation costs">
     <meta property="og:image" content="./assets/og-image.jpg">
 
-    <title>CoRide - Share airport rides and split costs</title>
+    <title>Cojauny - Share airport rides and split costs</title>
     <link rel="icon" type="image/svg+xml" href="assets/images/mountain_black.svg">
-    <link rel="stylesheet" href="styles.css?v=19.0">
+    <link rel="stylesheet" href="styles.css?v=20.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -26,86 +26,60 @@
 
 <body>
     <!-- Header -->
-    <header class="header">
+    <header>
         <div class="container">
             <div class="nav">
                 <div class="logo">
                     <div class="logo-container">
-                        <img src="assets/images/mountain_black.svg" alt="CoRide" class="logo-mountain">
-                        <span class="logo-coride">CoRide</span>
+                        <img src="assets/images/mountain_black.svg" alt="Cojauny" class="logo-mountain">
+                        <span class="logo-coride">Cojauny</span>
                     </div>
                 </div>
 
                 <!-- Language Selector -->
                 <div class="language-selector">
-                    <button class="lang-btn active" data-lang="en">🇬🇧 EN</button>
-                    <button class="lang-btn" data-lang="es">🇪🇸 ES</button>
-                    <button class="lang-btn" data-lang="de">🇩🇪 DE</button>
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="es">ES</button>
+                    <button class="lang-btn" data-lang="de">DE</button>
                 </div>
 
-                <button class="cta-btn-header" id="headerCtaBtn" data-translate="ctaButton">Join Beta</button>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
+        <div class="hero-container">
             <div class="hero-content">
-                <h1 class="hero-title" data-translate="hero.title">
-                    Share transportation with people from your flight
-                </h1>
-                <p class="hero-subtitle" data-translate="hero.subtitle">
-                    Don't travel alone to the airport. Connect with passengers on your flight, share taxi or rideshare, and save up to 70% on transportation costs.
-                </p>
-                <button class="cta-btn-main" id="mainCtaBtn" data-translate="ctaButton">
-                    I want to try it 🚀
-                </button>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">100+</span>
-                        <span class="stat-label" data-translate="hero.stats.early">Early testers</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">€20-60</span>
-                        <span class="stat-label" data-translate="hero.stats.saved">per trip</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">&lt;3 min</span>
-                        <span class="stat-label" data-translate="hero.stats.setup">to coordinate</span>
-                    </div>
-                </div>
+                <div class="hero-badge" data-translate="hero.badge">💰 Save up to 70% on airport rides</div>
+                <h1 class="hero-title" data-translate="hero.title">Share rides to the airport.<br>Save money. Simple.</h1>
+                <p class="hero-subtitle" data-translate="hero.subtitle">Find passengers on your flight, split Uber or taxi, done. Less waste. Lower cost. Smarter travel.</p>
+                <button class="cta-btn" data-translate="ctaButton">Join the beta 🚀</button>
+                <p class="cta-note" data-translate="hero.cta2">Limited access — only <strong>50 slots</strong> available</p>
             </div>
-            <div class="hero-image">
-                <div class="mockup-container">
-                    <div class="mockup-phone">
-                        <div class="mockup-screen">
+
+            <!-- Mockup visible solo en desktop -->
+            <div class="mockup-container">
+                <div class="mockup-phone">
+                    <div class="mock-screen">
+                        <div class="mock-content">
                             <div class="mock-header">
-                                <div class="mock-time">9:41</div>
-                                <div class="mock-icons">📶 📡 🔋</div>
+                                <span>✈️ IB2745 → Madrid</span>
+                                <span class="mock-status">3 viajeros</span>
                             </div>
-                            <div class="mock-content">
-                                <div class="mock-flight">
-                                    <span class="mock-badge">✈️ Your flight</span>
-                                    <div class="mock-flight-number">IB2345</div>
-                                    <div class="mock-route">MAD → BCN</div>
-                                </div>
-                                <div class="mock-users">
-                                    <div class="mock-user-card">
-                                        <div class="mock-avatar">👤</div>
-                                        <div class="mock-user-info">
-                                            <div class="mock-user-name">Ana</div>
-                                            <div class="mock-user-detail">🚖 Looking for taxi</div>
-                                        </div>
-                                        <div class="mock-chat-btn">💬</div>
+                            <div class="mock-passengers">
+                                <div class="mock-passenger-card">
+                                    <div class="mock-passenger-icon">👤</div>
+                                    <div class="mock-passenger-info">
+                                        <div class="mock-passenger-text">Ana (Madrid Centro)</div>
+                                        <div class="mock-passenger-action">Chat →</div>
                                     </div>
-                                    <div class="mock-user-card">
-                                        <div class="mock-avatar">👤</div>
-                                        <div class="mock-user-info">
-                                            <div class="mock-user-name">Carlos</div>
-                                            <div class="mock-user-detail">🚗 Sharing Uber</div>
-                                        </div>
-                                        <div class="mock-chat-btn">💬</div>
+                                </div>
+                                <div class="mock-passenger-card">
+                                    <div class="mock-passenger-icon">🚗</div>
+                                    <div class="mock-passenger-info">
+                                        <div class="mock-passenger-text">3 passengers splitting Uber</div>
+                                        <div class="mock-passenger-action">Join ride →</div>
                                     </div>
                                 </div>
                             </div>
@@ -116,54 +90,26 @@
         </div>
     </section>
 
-    <!-- How it Works -->
-    <section class="how-it-works">
+    <!-- Pain Points -->
+    <section class="pain-points">
         <div class="container">
-            <h2 class="section-title" data-translate="how.title">How it works</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-icon">🎫</div>
-                    <h3 class="step-title" data-translate="how.step1.title">Enter your flight</h3>
-                    <p class="step-description" data-translate="how.step1.desc">Add your flight number and travel date</p>
+            <h2 class="section-title" data-translate="painPoints.title">Why pay full price?</h2>
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <div class="pain-icon">💸</div>
+                    <p class="pain-text" data-translate="painPoints.expensive">€60 for a ride you don't need to pay alone</p>
                 </div>
-                <div class="step">
-                    <div class="step-icon">🤝</div>
-                    <h3 class="step-title" data-translate="how.step2.title">Find travel buddies</h3>
-                    <p class="step-description" data-translate="how.step2.desc">See other passengers looking to share rides</p>
+                <div class="pain-card">
+                    <div class="pain-icon">😤</div>
+                    <p class="pain-text" data-translate="painPoints.stress">No reliable way to find ride-sharing partners</p>
                 </div>
-                <div class="step">
-                    <div class="step-icon">💬</div>
-                    <h3 class="step-title" data-translate="how.step3.title">Connect & save</h3>
-                    <p class="step-description" data-translate="how.step3.desc">Chat, coordinate, and share transportation costs</p>
+                <div class="pain-card">
+                    <div class="pain-icon">🤦</div>
+                    <p class="pain-text" data-translate="painPoints.solo">Wasted money — when you could coordinate and save</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Say Goodbye Section -->
-    <section class="say-goodbye">
-        <div class="container">
-            <h2 class="section-title say-goodbye-title" data-translate="goodbye.title">Say goodbye to solo travel</h2>
-            <div class="goodbye-grid">
-                <div class="goodbye-item">
-                    <span class="goodbye-icon">🚫</span>
-                    <p class="goodbye-text" data-translate="goodbye.lonely">No more feeling lonely on your way to the airport</p>
-                </div>
-                <div class="goodbye-item">
-                    <span class="goodbye-icon">💸</span>
-                    <p class="goodbye-text" data-translate="goodbye.expensive">No more inflated taxi costs or gas expenses</p>
-                </div>
-                <div class="goodbye-item">
-                    <span class="goodbye-icon">😰</span>
-                    <p class="goodbye-text" data-translate="goodbye.stress">No more stressing alone about delays or wait times</p>
-                </div>
-                <div class="goodbye-item">
-                    <span class="goodbye-icon">✈️</span>
-                    <p class="goodbye-text" data-translate="goodbye.solo">No more flying solo — travel better together</p>
-                </div>
-            </div>
-            <div class="goodbye-cta">
-                <p class="goodbye-highlight" data-translate="goodbye.cta">Start sharing rides. Start saving money. Start making connections.</p>
+            <div class="pain-cta">
+                <p class="pain-cta-text" data-translate="painPoints.cta">Share rides. Split costs. Arrive ready.</p>
             </div>
         </div>
     </section>
@@ -171,173 +117,329 @@
     <!-- Benefits -->
     <section class="benefits">
         <div class="container">
-            <h2 class="section-title" data-translate="benefits.title">Why Coride?</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">💰</div>
-                    <h3 class="benefit-title" data-translate="benefits.save.title">Save money</h3>
-                    <p class="benefit-description" data-translate="benefits.save.desc">Split taxi, Uber or rideshare costs with other passengers</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">🌍</div>
-                    <h3 class="benefit-title" data-translate="benefits.eco.title">Be sustainable</h3>
-                    <p class="benefit-description" data-translate="benefits.eco.desc">Reduce carbon footprint by sharing vehicles</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">👥</div>
-                    <h3 class="benefit-title" data-translate="benefits.social.title">Make connections</h3>
-                    <p class="benefit-description" data-translate="benefits.social.desc">Meet interesting people from your same flight</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">🔒</div>
-                    <h3 class="benefit-title" data-translate="benefits.safe.title">Travel safely</h3>
-                    <p class="benefit-description" data-translate="benefits.safe.desc">Verified users from the same flight</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            <h2 class="section-title" data-translate="benefits.title">Why Cojauny?</h2>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Social Proof -->
-    <section class="social-proof">
-        <div class="container">
-            <div class="social-proof-content">
-                <div class="social-proof-stat">
-                    <div class="social-proof-number">100+</div>
-                    <p class="social-proof-text" data-translate="socialProof.travelers">Travelers already waiting to try CoRide</p>
-                </div>
-                <div class="social-proof-message">
-                    <h3 class="social-proof-title" data-translate="socialProof.title">Join the first testers</h3>
-                    <p class="social-proof-subtitle" data-translate="socialProof.subtitle">Be part of the community that's changing how we travel to airports. Save money, travel smarter.</p>
-                </div>
-            </div>
-            <div class="airports-supported">
-                <p class="airports-label" data-translate="socialProof.airports">Available at any airport worldwide</p>
-                <p class="airports-sublabel" data-translate="socialProof.airportsDetail">Connect with travelers wherever you fly ✈️</p>
-            </div>
-        </div>
-    </section>
+            <!-- Supabase Client -->
+            <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+            </head>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-box">
-                <h2 class="cta-title" data-translate="cta.title">Join the first 50 testers</h2>
-                <p class="cta-subtitle" data-translate="cta.subtitle">Get early access and start saving on your next trip</p>
-                <button class="cta-btn-main" id="footerCtaBtn" data-translate="ctaButton">I want to try it 🚀</button>
-                <p class="cta-note" data-translate="cta.note">✨ Early testers get lifetime premium features</p>
-            </div>
-        </div>
-    </section>
+            <body>
+                <!-- Header -->
+                <header class="header">
+                    <div class="container">
+                        <div class="nav">
+                            <div class="logo">
+                                <div class="logo-container">
+                                    <img src="assets/images/mountain_black.svg" alt="Cojauny" class="logo-mountain">
+                                    <span class="logo-coride">Cojauny</span>
+                                </div>
+                            </div>
 
-    <!-- Feedback Section -->
-    <section class="feedback-section">
-        <div class="container">
-            <div class="feedback-container">
-                <h2 class="feedback-title" data-translate="feedback.title">Got suggestions or ideas?</h2>
-                <p class="feedback-subtitle" data-translate="feedback.subtitle">Send us your feedback, business proposals, or improvement ideas. We'd love to hear from you.</p>
+                            <!-- Language Selector -->
+                            <div class="language-selector">
+                                <button class="lang-btn active" data-lang="en">🇬🇧 EN</button>
+                                <button class="lang-btn" data-lang="es">🇪🇸 ES</button>
+                                <button class="lang-btn" data-lang="de">🇩🇪 DE</button>
+                            </div>
 
-                <form class="feedback-form" id="feedbackForm">
-                    <input type="hidden" name="access_key" value="50e0b42a-ec9f-4117-8728-41b94196db89">
-                    <input type="hidden" name="subject" value="Nuevo mensaje - CoRide Feedback">
-                    <input type="hidden" name="from_name" value="CoRide Feedback Form">
-
-                    <div class="form-group">
-                        <label for="feedback-name" data-translate="feedback.form.name">Name</label>
-                        <input type="text" id="feedback-name" name="name" required placeholder="Your name">
+                            <button class="cta-btn-header" id="headerCtaBtn" data-translate="ctaButton">Join Beta</button>
+                        </div>
                     </div>
+                </header>
 
-                    <div class="form-group">
-                        <label for="feedback-email" data-translate="feedback.form.email">Email</label>
-                        <input type="email" id="feedback-email" name="email" required placeholder="your@email.com">
+                <!-- Hero Section -->
+                <section class="hero">
+                    <div class="container">
+                        <div class="hero-content">
+                            <h1 class="hero-title" data-translate="hero.title">
+                                Share transportation with people from your flight
+                            </h1>
+                            <p class="hero-subtitle" data-translate="hero.subtitle">
+                                Don't travel alone to the airport. Connect with passengers on your flight, share taxi or rideshare, and save up to 70% on transportation costs.
+                            </p>
+                            <button class="cta-btn-main" id="mainCtaBtn" data-translate="ctaButton">
+                                I want to try it 🚀
+                            </button>
+                            <div class="hero-stats">
+                                <div class="stat">
+                                    <span class="stat-number">100+</span>
+                                    <span class="stat-label" data-translate="hero.stats.early">Early testers</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">€20-60</span>
+                                    <span class="stat-label" data-translate="hero.stats.saved">per trip</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">&lt;3 min</span>
+                                    <span class="stat-label" data-translate="hero.stats.setup">to coordinate</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-image">
+                            <div class="mockup-container">
+                                <div class="mockup-phone">
+                                    <div class="mockup-screen">
+                                        <div class="mock-header">
+                                            <div class="mock-time">9:41</div>
+                                            <div class="mock-icons">📶 📡 🔋</div>
+                                        </div>
+                                        <div class="mock-content">
+                                            <div class="mock-flight">
+                                                <span class="mock-badge">✈️ Your flight</span>
+                                                <div class="mock-flight-number">IB2345</div>
+                                                <div class="mock-route">MAD → BCN</div>
+                                            </div>
+                                            <div class="mock-users">
+                                                <div class="mock-user-card">
+                                                    <div class="mock-avatar">👤</div>
+                                                    <div class="mock-user-info">
+                                                        <div class="mock-user-name">Ana</div>
+                                                        <div class="mock-user-detail">🚖 Looking for taxi</div>
+                                                    </div>
+                                                    <div class="mock-chat-btn">💬</div>
+                                                </div>
+                                                <div class="mock-user-card">
+                                                    <div class="mock-avatar">👤</div>
+                                                    <div class="mock-user-info">
+                                                        <div class="mock-user-name">Carlos</div>
+                                                        <div class="mock-user-detail">🚗 Sharing Uber</div>
+                                                    </div>
+                                                    <div class="mock-chat-btn">💬</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                </section>
 
-                    <div class="form-group">
-                        <label for="feedback-message" data-translate="feedback.form.message">Message</label>
-                        <textarea id="feedback-message" name="message" required rows="6" placeholder="Share your thoughts, ideas, or proposals..."></textarea>
+                <!-- How it Works -->
+                <section class="how-it-works">
+                    <div class="container">
+                        <h2 class="section-title" data-translate="how.title">How it works</h2>
+                        <div class="steps">
+                            <div class="step">
+                                <div class="step-icon">🎫</div>
+                                <h3 class="step-title" data-translate="how.step1.title">Enter your flight</h3>
+                                <p class="step-description" data-translate="how.step1.desc">Add your flight number and travel date</p>
+                            </div>
+                            <div class="step">
+                                <div class="step-icon">🤝</div>
+                                <h3 class="step-title" data-translate="how.step2.title">Find travel buddies</h3>
+                                <p class="step-description" data-translate="how.step2.desc">See other passengers looking to share rides</p>
+                            </div>
+                            <div class="step">
+                                <div class="step-icon">💬</div>
+                                <h3 class="step-title" data-translate="how.step3.title">Connect & save</h3>
+                                <p class="step-description" data-translate="how.step3.desc">Chat, coordinate, and share transportation costs</p>
+                            </div>
+                        </div>
                     </div>
+                </section>
 
-                    <div class="form-checkbox">
-                        <input type="checkbox" id="feedback-updates" name="updates">
-                        <label for="feedback-updates" data-translate="feedback.form.updates">I want to receive updates about Coride</label>
+                <!-- Say Goodbye Section -->
+                <section class="say-goodbye">
+                    <div class="container">
+                        <h2 class="section-title say-goodbye-title" data-translate="goodbye.title">Say goodbye to solo travel</h2>
+                        <div class="goodbye-grid">
+                            <div class="goodbye-item">
+                                <span class="goodbye-icon">🚫</span>
+                                <p class="goodbye-text" data-translate="goodbye.lonely">No more feeling lonely on your way to the airport</p>
+                            </div>
+                            <div class="goodbye-item">
+                                <span class="goodbye-icon">💸</span>
+                                <p class="goodbye-text" data-translate="goodbye.expensive">No more inflated taxi costs or gas expenses</p>
+                            </div>
+                            <div class="goodbye-item">
+                                <span class="goodbye-icon">😰</span>
+                                <p class="goodbye-text" data-translate="goodbye.stress">No more stressing alone about delays or wait times</p>
+                            </div>
+                            <div class="goodbye-item">
+                                <span class="goodbye-icon">✈️</span>
+                                <p class="goodbye-text" data-translate="goodbye.solo">No more flying solo — travel better together</p>
+                            </div>
+                        </div>
+                        <div class="goodbye-cta">
+                            <p class="goodbye-highlight" data-translate="goodbye.cta">Start sharing rides. Start saving money. Start making connections.</p>
+                        </div>
                     </div>
+                </section>
 
-                    <button type="submit" class="feedback-submit" data-translate="feedback.form.submit">Send message</button>
-                </form>
+                <!-- Benefits -->
+                <section class="benefits">
+                    <div class="container">
+                        <h2 class="section-title" data-translate="benefits.title">Why Cojauny?</h2>
+                        <div class="benefits-grid">
+                            <div class="benefit-card">
+                                <div class="benefit-icon">💰</div>
+                                <h3 class="benefit-title" data-translate="benefits.save.title">Save money</h3>
+                                <p class="benefit-description" data-translate="benefits.save.desc">Split taxi, Uber or rideshare costs with other passengers</p>
+                            </div>
+                            <div class="benefit-card">
+                                <div class="benefit-icon">🌍</div>
+                                <h3 class="benefit-title" data-translate="benefits.eco.title">Be sustainable</h3>
+                                <p class="benefit-description" data-translate="benefits.eco.desc">Reduce carbon footprint by sharing vehicles</p>
+                            </div>
+                            <div class="benefit-card">
+                                <div class="benefit-icon">👥</div>
+                                <h3 class="benefit-title" data-translate="benefits.social.title">Make connections</h3>
+                                <p class="benefit-description" data-translate="benefits.social.desc">Meet interesting people from your same flight</p>
+                            </div>
+                            <div class="benefit-card">
+                                <div class="benefit-icon">🔒</div>
+                                <h3 class="benefit-title" data-translate="benefits.safe.title">Travel safely</h3>
+                                <p class="benefit-description" data-translate="benefits.safe.desc">Verified users from the same flight</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-                <div class="feedback-success" id="feedbackSuccess">
-                    <div class="success-icon">✅</div>
-                    <p data-translate="feedback.success">Thank you! We've received your message.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+                <!-- Social Proof -->
+                <section class="social-proof">
+                    <div class="container">
+                        <div class="social-proof-content">
+                            <div class="social-proof-stat">
+                                <div class="social-proof-number">100+</div>
+                                <p class="social-proof-text" data-translate="socialProof.travelers">Travelers already waiting to try Cojauny</p>
+                            </div>
+                            <div class="social-proof-message">
+                                <h3 class="social-proof-title" data-translate="socialProof.title">Join the first testers</h3>
+                                <p class="social-proof-subtitle" data-translate="socialProof.subtitle">Be part of the community that's changing how we travel to airports. Save money, travel smarter.</p>
+                            </div>
+                        </div>
+                        <div class="airports-supported">
+                            <p class="airports-label" data-translate="socialProof.airports">Available at any airport worldwide</p>
+                            <p class="airports-sublabel" data-translate="socialProof.airportsDetail">Connect with travelers wherever you fly ✈️</p>
+                        </div>
+                    </div>
+                </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="assets/images/mountain_white.svg" alt="CoRide Mountain" class="logo-mountain-footer">
-                    <div class="logo-text-container">
-                        <span class="logo-coride logo-coride-white">CoRide</span>
+                <!-- CTA Section -->
+                <section class="cta-section">
+                    <div class="container">
+                        <div class="cta-box">
+                            <h2 class="cta-title" data-translate="cta.title">Join the first 50 testers</h2>
+                            <p class="cta-subtitle" data-translate="cta.subtitle">Get early access and start saving on your next trip</p>
+                            <button class="cta-btn-main" id="footerCtaBtn" data-translate="ctaButton">I want to try it 🚀</button>
+                            <p class="cta-note" data-translate="cta.note">✨ Early testers get lifetime premium features</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Feedback Section -->
+                <section class="feedback-section">
+                    <div class="container">
+                        <div class="feedback-container">
+                            <h2 class="feedback-title" data-translate="feedback.title">Got suggestions or ideas?</h2>
+                            <p class="feedback-subtitle" data-translate="feedback.subtitle">Send us your feedback, business proposals, or improvement ideas. We'd love to hear from you.</p>
+
+                            <form class="feedback-form" id="feedbackForm">
+                                <input type="hidden" name="access_key" value="50e0b42a-ec9f-4117-8728-41b94196db89">
+                                <input type="hidden" name="subject" value="Nuevo mensaje - Cojauny Feedback">
+                                <input type="hidden" name="from_name" value="Cojauny Feedback Form">
+
+                                <div class="form-group">
+                                    <label for="feedback-name" data-translate="feedback.form.name">Name</label>
+                                    <input type="text" id="feedback-name" name="name" required placeholder="Your name">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="feedback-email" data-translate="feedback.form.email">Email</label>
+                                    <input type="email" id="feedback-email" name="email" required placeholder="your@email.com">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="feedback-message" data-translate="feedback.form.message">Message</label>
+                                    <textarea id="feedback-message" name="message" required rows="6" placeholder="Share your thoughts, ideas, or proposals..."></textarea>
+                                </div>
+
+                                <div class="form-checkbox">
+                                    <input type="checkbox" id="feedback-updates" name="updates">
+                                    <label for="feedback-updates" data-translate="feedback.form.updates">I want to receive updates about Cojauny</label>
+                                </div>
+
+                                <button type="submit" class="feedback-submit" data-translate="feedback.form.submit">Send message</button>
+                            </form>
+
+                            <div class="feedback-success" id="feedbackSuccess">
+                                <div class="success-icon">✅</div>
+                                <p data-translate="feedback.success">Thank you! We've received your message.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Footer -->
+                <footer class="footer">
+                    <div class="container">
+                        <div class="footer-content">
+                            <div class="footer-logo">
+                                <img src="assets/images/mountain_white.svg" alt="Cojauny Mountain" class="logo-mountain-footer">
+                                <div class="logo-text-container">
+                                    <span class="logo-coride logo-coride-white">Cojauny</span>
+                                </div>
+                            </div>
+                            <p class="footer-tagline" data-translate="footer.tagline">Paths of Wonder</p>
+                            <p class="footer-copy">© 2025 Cojauny. <span data-translate="footer.rights">All rights reserved</span>.</p>
+                        </div>
+                    </div>
+                </footer>
+
+                <!-- Waitlist Modal -->
+                <div class="modal" id="waitlistModal">
+                    <div class="modal-overlay"></div>
+                    <div class="modal-content">
+                        <button class="modal-close" id="modalClose">&times;</button>
+                        <h2 class="modal-title" data-translate="form.title">Join the beta! 🚀</h2>
+                        <p class="modal-subtitle" data-translate="form.subtitle">Be among the first to try Cojauny and travel smarter</p>
+
+                        <form class="waitlist-form" id="waitlistForm">
+                            <input type="hidden" name="access_key" value="50e0b42a-ec9f-4117-8728-41b94196db89">
+                            <input type="hidden" name="subject" value="Nueva suscripción - Cojauny Waitlist">
+                            <input type="hidden" name="from_name" value="Cojauny Landing Page">
+
+                            <div class="form-group">
+                                <label for="name" data-translate="form.name">Name</label>
+                                <input type="text" id="name" name="name" required placeholder="John Doe">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" data-translate="form.email">Email</label>
+                                <input type="email" id="email" name="email" required placeholder="your@email.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="flight" data-translate="form.flight">Next flight (optional)</label>
+                                <input type="text" id="flight" name="flight" placeholder="IB2345 - MAD → BCN">
+                            </div>
+
+                            <div class="form-checkbox">
+                                <input type="checkbox" id="beta" name="beta">
+                                <label for="beta" data-translate="form.beta">I want to be a beta tester</label>
+                            </div>
+
+                            <button type="submit" class="form-submit" data-translate="form.submit">Join waitlist</button>
+
+                            <p class="form-note" data-translate="form.privacy">We respect your privacy. No spam, ever.</p>
+                        </form>
+
+                        <div class="success-message" id="successMessage">
+                            <div class="success-icon">✅</div>
+                            <h3 data-translate="form.success.title">Welcome aboard!</h3>
+                            <p data-translate="form.success.message">You're on the list. We'll contact you soon with early access.</p>
+                        </div>
                     </div>
                 </div>
-                <p class="footer-tagline" data-translate="footer.tagline">Paths of Wonder</p>
-                <p class="footer-copy">© 2025 CoRide. <span data-translate="footer.rights">All rights reserved</span>.</p>
-            </div>
-        </div>
-    </footer>
 
-    <!-- Waitlist Modal -->
-    <div class="modal" id="waitlistModal">
-        <div class="modal-overlay"></div>
-        <div class="modal-content">
-            <button class="modal-close" id="modalClose">&times;</button>
-            <h2 class="modal-title" data-translate="form.title">Join the beta! 🚀</h2>
-            <p class="modal-subtitle" data-translate="form.subtitle">Be among the first to try Coride and travel smarter</p>
-
-            <form class="waitlist-form" id="waitlistForm">
-                <input type="hidden" name="access_key" value="50e0b42a-ec9f-4117-8728-41b94196db89">
-                <input type="hidden" name="subject" value="Nueva suscripción - CoRide Waitlist">
-                <input type="hidden" name="from_name" value="CoRide Landing Page">
-
-                <div class="form-group">
-                    <label for="name" data-translate="form.name">Name</label>
-                    <input type="text" id="name" name="name" required placeholder="John Doe">
-                </div>
-
-                <div class="form-group">
-                    <label for="email" data-translate="form.email">Email</label>
-                    <input type="email" id="email" name="email" required placeholder="your@email.com">
-                </div>
-
-                <div class="form-group">
-                    <label for="flight" data-translate="form.flight">Next flight (optional)</label>
-                    <input type="text" id="flight" name="flight" placeholder="IB2345 - MAD → BCN">
-                </div>
-
-                <div class="form-checkbox">
-                    <input type="checkbox" id="beta" name="beta">
-                    <label for="beta" data-translate="form.beta">I want to be a beta tester</label>
-                </div>
-
-                <button type="submit" class="form-submit" data-translate="form.submit">Join waitlist</button>
-
-                <p class="form-note" data-translate="form.privacy">We respect your privacy. No spam, ever.</p>
-            </form>
-
-            <div class="success-message" id="successMessage">
-                <div class="success-icon">✅</div>
-                <h3 data-translate="form.success.title">Welcome aboard!</h3>
-                <p data-translate="form.success.message">You're on the list. We'll contact you soon with early access.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scripts -->
-    <script src="supabase-config.js"></script>
-    <script src="translations.js?v=22.0"></script>
-    <script src="app.js?v=22.0"></script>
-</body>
+                <!-- Scripts -->
+                <script src="supabase-config.js"></script>
+                <script src="translations.js?v=23.0"></script>
+                <script src="app.js?v=23.0"></script>
+            </body>
 
 </html>

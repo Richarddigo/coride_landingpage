@@ -88,7 +88,7 @@ async function handleFormSubmit(e) {
         email: document.getElementById('email').value.trim().toLowerCase(),
         flight: document.getElementById('flight').value || null,
         beta_tester: document.getElementById('beta').checked,
-        language: localStorage.getItem('corideLanguage') || 'en'
+        language: localStorage.getItem('cojaunyLanguage') || 'en'
     };
 
     try {
@@ -105,7 +105,7 @@ async function handleFormSubmit(e) {
             if (error) {
                 // Check if it's a duplicate email error
                 if (error.code === '23505') {
-                    const currentLang = localStorage.getItem('corideLanguage') || 'en';
+                    const currentLang = localStorage.getItem('cojaunyLanguage') || 'en';
                     const duplicateMessage = translations[currentLang].form.duplicate;
                     alert(duplicateMessage);
                     submitButton.disabled = false;
@@ -175,7 +175,7 @@ function saveToWaitlist(data) {
     // Get existing waitlist
     let waitlist = [];
     try {
-        const stored = localStorage.getItem('corideWaitlist');
+        const stored = localStorage.getItem('cojaunyWaitlist');
         if (stored) {
             waitlist = JSON.parse(stored);
         }
@@ -188,7 +188,7 @@ function saveToWaitlist(data) {
 
     // Save back to localStorage
     try {
-        localStorage.setItem('corideWaitlist', JSON.stringify(waitlist));
+        localStorage.setItem('cojaunyWaitlist', JSON.stringify(waitlist));
         console.log('✅ Waitlist entry saved:', data);
 
         // In production, also send to your backend
@@ -266,7 +266,7 @@ async function loadCounterFromDatabase() {
         counter.textContent = totalCount;
 
         // Save to localStorage as cache
-        localStorage.setItem('corideUserCount', totalCount);
+        localStorage.setItem('cojaunyUserCount', totalCount);
 
     } catch (error) {
         console.error('Error loading counter from database:', error);
@@ -282,14 +282,14 @@ function loadCounterFromLocalStorage() {
     // Si el elemento no existe, salir silenciosamente
     if (!counter) return;
 
-    const saved = localStorage.getItem('corideUserCount');
+    const saved = localStorage.getItem('cojaunyUserCount');
 
     if (saved) {
         counter.textContent = saved;
     } else {
         // Iniciar con 127 testers existentes
         counter.textContent = '127';
-        localStorage.setItem('corideUserCount', '127');
+        localStorage.setItem('cojaunyUserCount', '127');
     }
 }
 
@@ -319,7 +319,7 @@ async function downloadAllUsers() {
         const url = URL.createObjectURL(blob);
         const link = document.createElement('a');
         link.href = url;
-        link.download = `coride-waitlist-${new Date().toISOString().split('T')[0]}.csv`;
+        link.download = `cojauny-waitlist-${new Date().toISOString().split('T')[0]}.csv`;
         link.click();
         URL.revokeObjectURL(url);
 
@@ -353,13 +353,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Function to export waitlist data (for admin use)
 function exportWaitlist() {
     try {
-        const waitlist = JSON.parse(localStorage.getItem('corideWaitlist') || '[]');
+        const waitlist = JSON.parse(localStorage.getItem('cojaunyWaitlist') || '[]');
         const dataStr = JSON.stringify(waitlist, null, 2);
         const dataBlob = new Blob([dataStr], { type: 'application/json' });
         const url = URL.createObjectURL(dataBlob);
         const link = document.createElement('a');
         link.href = url;
-        link.download = `coride-waitlist-${new Date().toISOString().split('T')[0]}.json`;
+        link.download = `cojauny-waitlist-${new Date().toISOString().split('T')[0]}.json`;
         link.click();
         console.log('✅ Waitlist exported');
     } catch (e) {
@@ -384,7 +384,7 @@ async function handleFeedbackSubmit(e) {
         email: document.getElementById('feedback-email').value,
         message: document.getElementById('feedback-message').value,
         wants_updates: document.getElementById('feedback-updates').checked,
-        language: localStorage.getItem('corideLanguage') || 'en',
+        language: localStorage.getItem('cojaunyLanguage') || 'en',
         source: 'landing_page'
     };
 
@@ -451,7 +451,7 @@ async function handleFeedbackSubmit(e) {
         console.error('Error:', error);
 
         // Get current language for error message
-        const currentLang = localStorage.getItem('corideLanguage') || 'en';
+        const currentLang = localStorage.getItem('cojaunyLanguage') || 'en';
         const errorMessages = {
             en: 'There was an error sending your message. It has been saved locally. Please try again or contact us directly.',
             es: 'Hubo un error al enviar el mensaje. Se ha guardado localmente. Por favor, inténtalo de nuevo o contáctanos directamente.',
@@ -469,9 +469,9 @@ async function handleFeedbackSubmit(e) {
 // Save feedback to localStorage
 function saveFeedbackToLocal(data) {
     try {
-        const feedback = JSON.parse(localStorage.getItem('corideFeedback') || '[]');
+        const feedback = JSON.parse(localStorage.getItem('cojaunyFeedback') || '[]');
         feedback.push(data);
-        localStorage.setItem('corideFeedback', JSON.stringify(feedback));
+        localStorage.setItem('cojaunyFeedback', JSON.stringify(feedback));
     } catch (e) {
         console.error('Error saving feedback to localStorage:', e);
     }
@@ -500,7 +500,7 @@ async function exportFeedback() {
                 const url = URL.createObjectURL(blob);
                 const link = document.createElement('a');
                 link.href = url;
-                link.download = `coride-feedback-supabase-${new Date().toISOString()}.json`;
+                link.download = `cojauny-feedback-supabase-${new Date().toISOString()}.json`;
                 link.click();
                 URL.revokeObjectURL(url);
 
@@ -513,7 +513,7 @@ async function exportFeedback() {
     }
 
     // Fallback to localStorage
-    const feedback = JSON.parse(localStorage.getItem('corideFeedback') || '[]');
+    const feedback = JSON.parse(localStorage.getItem('cojaunyFeedback') || '[]');
 
     if (feedback.length === 0) {
         console.log('❌ No hay feedback data para exportar (ni en Supabase ni en localStorage)');
@@ -525,7 +525,7 @@ async function exportFeedback() {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `coride-feedback-local-${new Date().toISOString()}.json`;
+    link.download = `cojauny-feedback-local-${new Date().toISOString()}.json`;
     link.click();
     URL.revokeObjectURL(url);
 
@@ -538,5 +538,5 @@ window.exportFeedback = exportFeedback;
 window.downloadAllUsers = downloadAllUsers;
 
 // Show console message for developers
-console.log('%c🚀 CoRide Landing Page', 'color: #3b5998; font-size: 16px; font-weight: bold;');
+console.log('%c🚀 Cojauny Landing Page', 'color: #3b5998; font-size: 16px; font-weight: bold;');
 console.log('Commands: exportWaitlist() | exportFeedback() | downloadAllUsers()');
