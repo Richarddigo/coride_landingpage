@@ -27,23 +27,23 @@ const translations = {
             title: "How it works",
             step1: {
                 title: "Add your flight",
-                desc: "Enter your flight number and see who else is traveling"
+                desc: "Enter your details and discover fellow travelers on your route"
             },
             step2: {
                 title: "Find ride partners",
-                desc: "Browse passengers heading the same direction as you"
+                desc: "Browse nearby passengers heading your way"
             },
             step3: {
                 title: "Coordinate & split",
-                desc: "Quick chat to arrange pickup point and split the fare"
+                desc: "Chat briefly, arrange meetup, share the cost"
             }
         },
         goodbye: {
             title: "Stop Overpaying for Airport Rides",
-            lonely: "No more expensive solo taxi rides to the airport",
-            expensive: "No more paying full price when you can split it",
-            stress: "No more worrying about finding reliable shared rides",
-            solo: "No more wasted money — coordinate and save",
+            lonely: "Expensive solo taxi rides draining your budget",
+            expensive: "Paying full fare when you could split the cost",
+            stress: "Struggling to find reliable ride-sharing options",
+            solo: "Wasting money on unnecessary transport expenses",
             cta: "Share rides. Split costs. Arrive smart."
         },
         benefits: {
@@ -137,42 +137,42 @@ const translations = {
             title: "Cómo funciona",
             step1: {
                 title: "Añade tu vuelo",
-                desc: "Introduce tu número de vuelo y mira quién más viaja"
+                desc: "Introduce tus datos y descubre viajeros en tu misma ruta"
             },
             step2: {
-                title: "Encuentra compañeros de ruta",
-                desc: "Busca pasajeros que van en tu misma dirección"
+                title: "Encuentra compañeros",
+                desc: "Explora pasajeros cercanos con tu mismo destino"
             },
             step3: {
-                title: "Coordina y divide",
-                desc: "Chat rápido para acordar punto de encuentro y dividir tarifa"
+                title: "Coordina y comparte",
+                desc: "Un mensaje rápido, acuerda el encuentro y reparte gastos"
             }
         },
         goodbye: {
             title: "Deja de Pagar de Más por el Taxi al Aeropuerto",
-            lonely: "Se acabaron los taxis caros en solitario al aeropuerto",
-            expensive: "Se acabó pagar el precio completo cuando puedes dividirlo",
-            stress: "Se acabó buscar cómo compartir transporte de forma fiable",
-            solo: "Se acabó el dinero tirado — coordínate y ahorra",
+            lonely: "Taxis caros que vacían tu cartera cada viaje",
+            expensive: "Tarifas completas cuando podrías dividir el coste",
+            stress: "La incertidumbre de encontrar opciones fiables para compartir",
+            solo: "Gastos innecesarios en cada trayecto al aeropuerto",
             cta: "Comparte trayectos. Divide costes. Llega listo."
         },
         benefits: {
             title: "Por qué los viajeros eligen Cojauny™",
             save: {
                 title: "Ahorra Dinero",
-                desc: "Divide el coste de Uber o taxi con pasajeros de tu vuelo. Ahorra 30-70 € de media por viaje."
+                desc: "Comparte el coste del taxi o Uber con otros pasajeros y ahorra entre 30-70 € cada trayecto."
             },
             eco: {
-                title: "Sé Sostenible",
-                desc: "Menos vehículos, menos emisiones. Bueno para tu bolsillo y para el planeta."
+                title: "Viaja Sostenible",
+                desc: "Reduce vehículos y emisiones. Beneficia tu bolsillo y cuida el planeta."
             },
             social: {
-                title: "Coordinación Simple",
-                desc: "Chat fácil con pasajeros de tu vuelo. Coordina punto de encuentro, divide tarifa, listo."
+                title: "Coordina Fácil",
+                desc: "Conecta con pasajeros de tu vuelo, acuerda el punto de recogida y divide el coste. Así de simple."
             },
             safe: {
-                title: "Solo del Mismo Vuelo",
-                desc: "Usuarios verificados mediante reserva de vuelo. Solo pasajeros reales de tu vuelo exacto — sin desconocidos aleatorios."
+                title: "Mismo Vuelo",
+                desc: "Todos los usuarios verificados con su reserva. Solo viajas con pasajeros confirmados de tu vuelo."
             }
         },
         socialProof: {
@@ -247,42 +247,42 @@ const translations = {
             title: "Wie es funktioniert",
             step1: {
                 title: "Flug hinzufügen",
-                desc: "Gib deine Flugnummer ein und sieh, wer noch mitfliegt"
+                desc: "Gib deine Daten ein und entdecke Mitreisende auf deiner Route"
             },
             step2: {
                 title: "Fahrpartner finden",
-                desc: "Finde Passagiere, die in die gleiche Richtung fahren"
+                desc: "Durchsuche Passagiere in deiner Nähe mit gleichem Ziel"
             },
             step3: {
                 title: "Koordinieren & teilen",
-                desc: "Kurzer Chat für Treffpunkt und Kostenaufteilung"
+                desc: "Kurze Nachricht, Treffpunkt vereinbaren, Kosten aufteilen"
             }
         },
         goodbye: {
             title: "Schluss mit Überteuerten Flughafen-Fahrten",
-            lonely: "Nie mehr teure Einzelfahrten zum Flughafen",
-            expensive: "Nie mehr Vollpreis zahlen, wenn du teilen kannst",
-            stress: "Nie mehr nach zuverlässigen Mitfahrgelegenheiten suchen",
-            solo: "Nie mehr Geld verschwenden — koordinieren und sparen",
+            lonely: "Teure Einzelfahrten, die dein Budget belasten",
+            expensive: "Voller Fahrpreis statt geteilter Kosten",
+            stress: "Die Unsicherheit bei der Suche nach zuverlässigen Fahrgemeinschaften",
+            solo: "Unnötige Ausgaben bei jedem Flughafentransfer",
             cta: "Fahrten teilen. Kosten teilen. Clever ankommen."
         },
         benefits: {
             title: "Warum Reisende Cojauny™ wählen",
             save: {
                 title: "Geld Sparen",
-                desc: "Teilt Uber oder Taxi mit Flugpassagieren. Spart durchschnittlich 30-70 € pro Fahrt."
+                desc: "Teile Taxi oder Uber mit anderen Passagieren und spare 30-70 € pro Fahrt."
             },
             eco: {
-                title: "Nachhaltig Sein",
-                desc: "Weniger Fahrzeuge, weniger Emissionen. Gut für Geldbeutel und Umwelt."
+                title: "Nachhaltig Reisen",
+                desc: "Reduziere Fahrzeuge und Emissionen. Schone Geldbeutel und Umwelt."
             },
             social: {
-                title: "Einfache Koordination",
-                desc: "Unkomplizierter Chat mit Passagieren deines Flugs. Treffpunkt abstimmen, Kosten teilen, fertig."
+                title: "Unkompliziert",
+                desc: "Vernetze dich mit Passagieren, vereinbare den Treffpunkt und teile die Kosten. So einfach."
             },
             safe: {
-                title: "Nur vom Selben Flug",
-                desc: "Nutzer verifiziert durch Flugbuchung. Nur echte Passagiere deines exakten Flugs — keine zufälligen Fremden."
+                title: "Selber Flug",
+                desc: "Alle Nutzer mit Buchung verifiziert. Du reist nur mit bestätigten Passagieren deines Flugs."
             }
         },
         socialProof: {
@@ -326,6 +326,116 @@ const translations = {
             success: {
                 title: "Willkommen an Bord!",
                 message: "Du bist auf der Liste. Wir kontaktieren dich bald mit frühem Zugang."
+            }
+        }
+    },
+    fr: {
+        ctaButton: "Rejoindre la bêta 🚀",
+        hero: {
+            title: "Atterrissez Plus Malin. Partagez le Trajet.",
+            subtitle: "Trouvez des passagers de votre vol et partagez les transferts aéroport. Économisez 30-70 € par trajet en taxis et Ubers — coordonnez en secondes.",
+            stats: {
+                early: "Bêta-testeurs prêts",
+                saved1: "30-70 €",
+                saved: "Économie moy. par trajet",
+                setup: "Pour coordonner"
+            }
+        },
+        mockup: {
+            ride1: {
+                title: "Partager taxi vers aéroport",
+                from: "Depuis le centre-ville",
+                people: "3 personnes"
+            },
+            ride2: {
+                title: "Partager Uber depuis aéroport",
+                to: "Vers le centre-ville",
+                people: "2 personnes"
+            }
+        },
+        how: {
+            title: "Comment ça marche",
+            step1: {
+                title: "Ajoutez votre vol",
+                desc: "Indiquez vos informations et découvrez les voyageurs sur votre itinéraire"
+            },
+            step2: {
+                title: "Trouvez des partenaires",
+                desc: "Explorez les passagers proches partageant votre destination"
+            },
+            step3: {
+                title: "Coordonnez et partagez",
+                desc: "Un message rapide, fixez le rendez-vous et partagez les frais"
+            }
+        },
+        goodbye: {
+            title: "Arrêtez de Surpayer vos Trajets Aéroport",
+            lonely: "Des taxis coûteux qui vident votre budget à chaque voyage",
+            expensive: "Le tarif plein alors que vous pourriez partager",
+            stress: "L'incertitude de trouver des options de covoiturage fiables",
+            solo: "Des dépenses inutiles à chaque transfert aéroport",
+            cta: "Partagez les trajets. Partagez les coûts. Arrivez malin."
+        },
+        benefits: {
+            title: "Pourquoi les voyageurs choisissent Cojauny™",
+            save: {
+                title: "Économiser",
+                desc: "Partagez le taxi ou l'Uber avec d'autres passagers et économisez 30-70 € par trajet."
+            },
+            eco: {
+                title: "Voyager Responsable",
+                desc: "Réduisez véhicules et émissions. Bénéfique pour votre budget et l'environnement."
+            },
+            social: {
+                title: "Facile",
+                desc: "Connectez-vous avec des passagers, convenez du point de rencontre et partagez les frais. Tout simplement."
+            },
+            safe: {
+                title: "Même Vol",
+                desc: "Tous les utilisateurs vérifiés avec leur réservation. Vous voyagez uniquement avec des passagers confirmés."
+            }
+        },
+        socialProof: {
+            travelers: "Voyageurs attendant déjà d'essayer Cojauny™",
+            title: "Rejoignez les premiers testeurs",
+            subtitle: "Faites partie de la communauté qui change notre façon de voyager vers les aéroports. Économisez, voyagez plus malin.",
+            airports: "Disponible dans tous les aéroports du monde",
+            airportsDetail: "Connectez-vous avec des voyageurs où que vous voliez ✈️"
+        },
+        cta: {
+            title: "Devenez l'un des Premiers Bêta-Testeurs",
+            subtitle: "Obtenez un accès anticipé exclusif et commencez à économiser sur les trajets aéroport immédiatement",
+            note: "🎁 Les premiers testeurs débloquent les fonctionnalités premium à vie — gratuitement pour toujours"
+        },
+        feedback: {
+            title: "Des suggestions ou des idées ?",
+            subtitle: "Envoyez-nous vos commentaires, propositions commerciales ou idées d'amélioration. Nous serions ravis de vous entendre.",
+            form: {
+                name: "Nom",
+                email: "Email",
+                message: "Message",
+                updates: "Je veux recevoir des mises à jour sur Cojauny™",
+                submit: "Envoyer le message"
+            },
+            success: "Merci ! Nous avons reçu votre message."
+        },
+        footer: {
+            tagline: "Chemins d'Émerveillement",
+            rights: "Tous droits réservés"
+        },
+        form: {
+            title: "Rejoignez la bêta ! 🚀",
+            subtitle: "Soyez parmi les premiers à essayer Cojauny™ et voyager plus malin",
+            name: "Nom",
+            email: "Email",
+            flight: "Prochain vol (optionnel)",
+            beta: "Je veux être bêta-testeur",
+            submit: "Rejoindre la liste d'attente",
+            privacy: "Nous respectons votre vie privée. Pas de spam, jamais.",
+            duplicate: "Cet email est déjà enregistré sur notre liste. Merci de votre intérêt !",
+            success: {
+                title: "Bienvenue à bord !",
+                message: "Vous êtes sur la liste. Nous vous contacterons bientôt avec un accès anticipé."
             }
         }
     }
@@ -379,7 +489,7 @@ function initLanguage() {
     // If no saved language, detect browser language
     if (!savedLang) {
         const browserLang = navigator.language.toLowerCase().split('-')[0];
-        savedLang = ['en', 'es', 'de'].includes(browserLang) ? browserLang : 'en';
+        savedLang = ['en', 'es', 'de', 'fr'].includes(browserLang) ? browserLang : 'en';
     }
 
     translatePage(savedLang);
