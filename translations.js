@@ -3,9 +3,10 @@ const translations = {
         ctaButton: "Join the beta 🚀",
         hero: {
             title: "Land Smarter. Share the Ride.",
-            subtitle: "Find passengers from your flight and split airport transfers. Save €20-60 per trip on taxis and Ubers — coordinate in seconds.",
+            subtitle: "Find passengers from your flight and split airport transfers. Save €30-70 per trip on taxis and Ubers — coordinate in seconds.",
             stats: {
                 early: "Beta testers ready",
+                saved1: "€30-70",
                 saved: "Avg. saved per trip",
                 setup: "To coordinate"
             }
@@ -37,7 +38,7 @@ const translations = {
             title: "Why travelers choose Cojauny",
             save: {
                 title: "Save Money",
-                desc: "Split Uber or taxi costs with flight passengers. Save €20-60 per trip on average."
+                desc: "Split Uber or taxi costs with flight passengers. Save €30-70 per trip on average."
             },
             eco: {
                 title: "Be Sustainable",
@@ -100,9 +101,10 @@ const translations = {
         ctaButton: "Únete a la beta 🚀",
         hero: {
             title: "Aterriza Mejor. Comparte el Viaje.",
-            subtitle: "Encuentra pasajeros de tu vuelo y divide el transporte al aeropuerto. Ahorra 20-60€ por trayecto en taxis y Ubers — coordina en segundos.",
+            subtitle: "Encuentra pasajeros de tu vuelo y divide el transporte al aeropuerto. Ahorra 30-70 € por trayecto en taxis y Ubers — coordina en segundos.",
             stats: {
                 early: "Beta testers esperando",
+                saved1: "30-70 €",
                 saved: "Ahorro medio por viaje",
                 setup: "Para coordinar"
             }
@@ -134,7 +136,7 @@ const translations = {
             title: "Por qué los viajeros eligen Cojauny",
             save: {
                 title: "Ahorra Dinero",
-                desc: "Divide el coste de Uber o taxi con pasajeros de tu vuelo. Ahorra 20-60€ de media por viaje."
+                desc: "Divide el coste de Uber o taxi con pasajeros de tu vuelo. Ahorra 30-70 € de media por viaje."
             },
             eco: {
                 title: "Sé Sostenible",
@@ -197,9 +199,10 @@ const translations = {
         ctaButton: "Zur Beta anmelden 🚀",
         hero: {
             title: "Lande Smarter. Teile die Fahrt.",
-            subtitle: "Finde Passagiere deines Flugs und teilt euch den Flughafen-Transfer. Spare 20-60€ pro Fahrt bei Taxi und Uber — koordiniere in Sekunden.",
+            subtitle: "Finde Passagiere deines Flugs und teilt euch den Flughafen-Transfer. Spare 30-70 € pro Fahrt bei Taxi und Uber — koordiniere in Sekunden.",
             stats: {
                 early: "Beta-Tester warten",
+                saved1: "30-70 €",
                 saved: "Ø Ersparnis pro Fahrt",
                 setup: "Zum Koordinieren"
             }
@@ -231,7 +234,7 @@ const translations = {
             title: "Warum Reisende Cojauny wählen",
             save: {
                 title: "Geld Sparen",
-                desc: "Teilt Uber oder Taxi mit Flugpassagieren. Spart durchschnittlich 20-60€ pro Fahrt."
+                desc: "Teilt Uber oder Taxi mit Flugpassagieren. Spart durchschnittlich 30-70 € pro Fahrt."
             },
             eco: {
                 title: "Nachhaltig Sein",
