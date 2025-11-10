@@ -11,6 +11,18 @@ const translations = {
                 setup: "To coordinate"
             }
         },
+        mockup: {
+            ride1: {
+                title: "Share taxi to airport",
+                from: "From city center",
+                people: "3 people"
+            },
+            ride2: {
+                title: "Share Uber from airport",
+                to: "To city center",
+                people: "2 people"
+            }
+        },
         how: {
             title: "How it works",
             step1: {
@@ -35,7 +47,7 @@ const translations = {
             cta: "Share rides. Split costs. Arrive smart."
         },
         benefits: {
-            title: "Why travelers choose Cojauny",
+            title: "Why travelers choose Cojauny™",
             save: {
                 title: "Save Money",
                 desc: "Split Uber or taxi costs with flight passengers. Save €30-70 per trip on average."
@@ -54,16 +66,16 @@ const translations = {
             }
         },
         socialProof: {
-            travelers: "Travelers already waiting to try Cojauny",
+            travelers: "Travelers already waiting to try Cojauny™",
             title: "Join the first testers",
             subtitle: "Be part of the community that's changing how we travel to airports. Save money, travel smarter.",
             airports: "Available at any airport worldwide",
             airportsDetail: "Connect with travelers wherever you fly ✈️"
         },
         cta: {
-            title: "Be One of the First 50 Beta Testers",
+            title: "Be One of the First Beta Testers",
             subtitle: "Get exclusive early access and start saving on airport rides immediately",
-            note: "🎁 First 50 testers unlock lifetime premium features — forever free"
+            note: "🎁 First testers unlock lifetime premium features — forever free"
         },
         feedback: {
             title: "Got suggestions or ideas?",
@@ -72,7 +84,7 @@ const translations = {
                 name: "Name",
                 email: "Email",
                 message: "Message",
-                updates: "I want to receive updates about Cojauny",
+                updates: "I want to receive updates about Cojauny™",
                 submit: "Send message"
             },
             success: "Thank you! We've received your message."
@@ -83,7 +95,7 @@ const translations = {
         },
         form: {
             title: "Join the beta! 🚀",
-            subtitle: "Be among the first to try Cojauny and travel smarter",
+            subtitle: "Be among the first to try Cojauny™ and travel smarter",
             name: "Name",
             email: "Email",
             flight: "Next flight (optional)",
@@ -107,6 +119,18 @@ const translations = {
                 saved1: "30-70 €",
                 saved: "Ahorro medio por viaje",
                 setup: "Para coordinar"
+            }
+        },
+        mockup: {
+            ride1: {
+                title: "Comparto taxi a aeropuerto",
+                from: "Desde centro ciudad",
+                people: "3 personas"
+            },
+            ride2: {
+                title: "Comparto Uber desde aeropuerto",
+                to: "A centro ciudad",
+                people: "2 personas"
             }
         },
         how: {
@@ -133,7 +157,7 @@ const translations = {
             cta: "Comparte trayectos. Divide costes. Llega listo."
         },
         benefits: {
-            title: "Por qué los viajeros eligen Cojauny",
+            title: "Por qué los viajeros eligen Cojauny™",
             save: {
                 title: "Ahorra Dinero",
                 desc: "Divide el coste de Uber o taxi con pasajeros de tu vuelo. Ahorra 30-70 € de media por viaje."
@@ -152,16 +176,16 @@ const translations = {
             }
         },
         socialProof: {
-            travelers: "Viajeros ya esperando para probar Cojauny",
+            travelers: "Viajeros ya esperando para probar Cojauny™",
             title: "Únete a los primeros testers",
             subtitle: "Forma parte de la comunidad que está cambiando cómo viajamos a los aeropuertos. Ahorra dinero, viaja más inteligente.",
             airports: "Disponible en cualquier aeropuerto del mundo",
             airportsDetail: "Conecta con viajeros dondequiera que vueles ✈️"
         },
         cta: {
-            title: "Sé Uno de los Primeros 50 Beta Testers",
+            title: "Sé Uno de los Primeros Beta Testers",
             subtitle: "Consigue acceso exclusivo anticipado y empieza a ahorrar en tus trayectos al aeropuerto ahora mismo",
-            note: "🎁 Los primeros 50 testers desbloquean funciones premium de por vida — gratis para siempre"
+            note: "🎁 Los primeros testers desbloquean funciones premium de por vida — gratis para siempre"
         },
         feedback: {
             title: "¿Tienes sugerencias o ideas?",
@@ -170,7 +194,7 @@ const translations = {
                 name: "Nombre",
                 email: "Email",
                 message: "Mensaje",
-                updates: "Quiero recibir actualizaciones sobre Cojauny",
+                updates: "Quiero recibir actualizaciones sobre Cojauny™",
                 submit: "Enviar mensaje"
             },
             success: "¡Gracias! Hemos recibido tu mensaje."
@@ -181,7 +205,7 @@ const translations = {
         },
         form: {
             title: "¡Únete a la beta! 🚀",
-            subtitle: "Sé de los primeros en probar Cojauny y viajar más inteligente",
+            subtitle: "Sé de los primeros en probar Cojauny™ y viajar más inteligente",
             name: "Nombre",
             email: "Correo electrónico",
             flight: "Próximo vuelo (opcional)",
@@ -205,6 +229,18 @@ const translations = {
                 saved1: "30-70 €",
                 saved: "Ø Ersparnis pro Fahrt",
                 setup: "Zum Koordinieren"
+            }
+        },
+        mockup: {
+            ride1: {
+                title: "Taxi zum Flughafen teilen",
+                from: "Vom Stadtzentrum",
+                people: "3 Personen"
+            },
+            ride2: {
+                title: "Uber vom Flughafen teilen",
+                to: "Zum Stadtzentrum",
+                people: "2 Personen"
             }
         },
         how: {
@@ -231,7 +267,7 @@ const translations = {
             cta: "Fahrten teilen. Kosten teilen. Clever ankommen."
         },
         benefits: {
-            title: "Warum Reisende Cojauny wählen",
+            title: "Warum Reisende Cojauny™ wählen",
             save: {
                 title: "Geld Sparen",
                 desc: "Teilt Uber oder Taxi mit Flugpassagieren. Spart durchschnittlich 30-70 € pro Fahrt."
@@ -250,16 +286,16 @@ const translations = {
             }
         },
         socialProof: {
-            travelers: "Reisende warten bereits darauf, Cojauny auszuprobieren",
+            travelers: "Reisende warten bereits darauf, Cojauny™ auszuprobieren",
             title: "Werde einer der ersten Tester",
             subtitle: "Sei Teil der Community, die verändert, wie wir zu Flughäfen reisen. Spare Geld, reise smarter.",
             airports: "Verfügbar an jedem Flughafen weltweit",
             airportsDetail: "Verbinde dich mit Reisenden, wo auch immer du fliegst ✈️"
         },
         cta: {
-            title: "Werde Einer der Ersten 50 Beta-Tester",
+            title: "Werde Einer der Ersten Beta-Tester",
             subtitle: "Sichere dir exklusiven Früh-Zugang und spare sofort bei Flughafen-Fahrten",
-            note: "🎁 Die ersten 50 Tester erhalten Premium-Features auf Lebenszeit — für immer kostenlos"
+            note: "🎁 Die ersten Tester erhalten Premium-Features auf Lebenszeit — für immer kostenlos"
         },
         feedback: {
             title: "Hast du Vorschläge oder Ideen?",
@@ -268,7 +304,7 @@ const translations = {
                 name: "Name",
                 email: "E-Mail",
                 message: "Nachricht",
-                updates: "Ich möchte Updates über Cojauny erhalten",
+                updates: "Ich möchte Updates über Cojauny™ erhalten",
                 submit: "Nachricht senden"
             },
             success: "Vielen Dank! Wir haben deine Nachricht erhalten."
@@ -279,7 +315,7 @@ const translations = {
         },
         form: {
             title: "Tritt der Beta bei! 🚀",
-            subtitle: "Sei einer der Ersten, die Cojauny ausprobieren und smarter reisen",
+            subtitle: "Sei einer der Ersten, die Cojauny™ ausprobieren und smarter reisen",
             name: "Name",
             email: "E-Mail",
             flight: "Nächster Flug (optional)",

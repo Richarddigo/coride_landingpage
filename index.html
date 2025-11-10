@@ -4,18 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cojauny: Share transportation with people from your flight. Save money, travel better.">
+    <meta name="description" content="Cojauny™: Share transportation with people from your flight. Save money, travel better.">
     <meta name="keywords" content="rideshare, airport, transportation, travel, carpool">
 
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Cojauny - Share rides with your flight">
+    <meta property="og:title" content="Cojauny™ - Share rides with your flight">
     <meta property="og:description" content="Connect with travelers on your flight and share transportation costs">
     <meta property="og:image" content="./assets/og-image.jpg">
 
-    <title>Cojauny - Share airport rides and split costs</title>
+    <title>Cojauny™ - Share airport rides and split costs</title>
     <link rel="icon" type="image/svg+xml" href="assets/images/mountain_black.svg">
-    <link rel="stylesheet" href="styles.css?v=20.0">
+    <link rel="stylesheet" href="styles.css?v=20.6">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -40,8 +40,8 @@
                 <div class="nav">
                     <div class="logo">
                         <div class="logo-container">
-                            <img src="assets/images/mountain_black.svg" alt="Cojauny" class="logo-mountain">
-                            <span class="logo-coride">Cojauny</span>
+                            <img src="assets/images/mountain_black.svg" alt="Cojauny™" class="logo-mountain">
+                            <span class="logo-coride">Cojauny™</span>
                         </div>
                     </div>
 
@@ -101,18 +101,20 @@
                                     </div>
                                     <div class="mock-users">
                                         <div class="mock-user-card">
-                                            <div class="mock-avatar">👤</div>
+                                            <div class="mock-avatar">�</div>
                                             <div class="mock-user-info">
-                                                <div class="mock-user-name">Ana</div>
-                                                <div class="mock-user-detail">🚖 Looking for taxi</div>
+                                                <div class="mock-user-name" data-translate="mockup.ride1.title">Share taxi to airport</div>
+                                                <div class="mock-user-detail" data-translate="mockup.ride1.from">From city center</div>
+                                                <div class="mock-user-people" data-translate="mockup.ride1.people">3 people</div>
                                             </div>
                                             <div class="mock-chat-btn">💬</div>
                                         </div>
                                         <div class="mock-user-card">
-                                            <div class="mock-avatar">👤</div>
+                                            <div class="mock-avatar">�</div>
                                             <div class="mock-user-info">
-                                                <div class="mock-user-name">Carlos</div>
-                                                <div class="mock-user-detail">🚗 Sharing Uber</div>
+                                                <div class="mock-user-name" data-translate="mockup.ride2.title">Share Uber from airport</div>
+                                                <div class="mock-user-detail" data-translate="mockup.ride2.to">To city center</div>
+                                                <div class="mock-user-people" data-translate="mockup.ride2.people">2 people</div>
                                             </div>
                                             <div class="mock-chat-btn">💬</div>
                                         </div>
@@ -131,7 +133,7 @@
                 <h2 class="section-title" data-translate="how.title">How it works</h2>
                 <div class="steps">
                     <div class="step">
-                        <div class="step-icon">🎫</div>
+                        <div class="step-icon">✈️</div>
                         <h3 class="step-title" data-translate="how.step1.title">Enter your flight</h3>
                         <p class="step-description" data-translate="how.step1.desc">Add your flight number and travel date</p>
                     </div>
@@ -247,8 +249,9 @@
 
                     <form class="feedback-form" id="feedbackForm">
                         <input type="hidden" name="access_key" value="50e0b42a-ec9f-4117-8728-41b94196db89">
-                        <input type="hidden" name="subject" value="Nuevo mensaje - Cojauny Feedback">
-                        <input type="hidden" name="from_name" value="Cojauny Feedback Form">
+                        <input type="hidden" name="subject" value="Nuevo mensaje - Cojauny™ Feedback">
+                        <input type="hidden" name="from_name" value="Cojauny™ Feedback Form">
+                        <input type="hidden" name="email_to" value="feedback@cojauny.com">
 
                         <div class="form-group">
                             <label for="feedback-name" data-translate="feedback.form.name">Name</label>
@@ -286,13 +289,13 @@
             <div class="container">
                 <div class="footer-content">
                     <div class="footer-logo">
-                        <img src="assets/images/mountain_white.svg" alt="Cojauny Mountain" class="logo-mountain-footer">
+                        <img src="assets/images/mountain_white.svg" alt="Cojauny™ Mountain" class="logo-mountain-footer">
                         <div class="logo-text-container">
-                            <span class="logo-coride logo-coride-white">Cojauny</span>
+                            <span class="logo-coride logo-coride-white">Cojauny™</span>
                         </div>
                     </div>
                     <p class="footer-tagline" data-translate="footer.tagline">Paths of Wonder</p>
-                    <p class="footer-copy">© 2025 Cojauny. <span data-translate="footer.rights">All rights reserved</span>.</p>
+                    <p class="footer-copy">© 2025 Cojauny™. <span data-translate="footer.rights">All rights reserved</span>.</p>
                 </div>
             </div>
         </footer>
@@ -303,12 +306,13 @@
             <div class="modal-content">
                 <button class="modal-close" id="modalClose">&times;</button>
                 <h2 class="modal-title" data-translate="form.title">Join the beta! 🚀</h2>
-                <p class="modal-subtitle" data-translate="form.subtitle">Be among the first to try Cojauny and travel smarter</p>
+                <p class="modal-subtitle" data-translate="form.subtitle">Be among the first to try Cojauny™ and travel smarter</p>
 
                 <form class="waitlist-form" id="waitlistForm">
                     <input type="hidden" name="access_key" value="50e0b42a-ec9f-4117-8728-41b94196db89">
-                    <input type="hidden" name="subject" value="Nueva suscripción - Cojauny Waitlist">
-                    <input type="hidden" name="from_name" value="Cojauny Landing Page">
+                    <input type="hidden" name="subject" value="Nueva suscripción - Cojauny™ Waitlist">
+                    <input type="hidden" name="from_name" value="Cojauny™ Landing Page">
+                    <input type="hidden" name="email_to" value="beta@cojauny.com">
 
                     <div class="form-group">
                         <label for="name" data-translate="form.name">Name</label>
@@ -345,8 +349,8 @@
 
         <!-- Scripts -->
         <script src="supabase-config.js"></script>
-        <script src="translations.js?v=23.0"></script>
-        <script src="app.js?v=23.0"></script>
+        <script src="translations.js?v=29.0"></script>
+        <script src="app.js?v=29.0"></script>
     </body>
 
 </html>

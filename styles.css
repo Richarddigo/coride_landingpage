@@ -420,6 +420,13 @@ body {
     color: var(--gray);
 }
 
+.mock-user-people {
+    font-size: 11px;
+    color: var(--gray-light);
+    font-weight: 600;
+    margin-top: 2px;
+}
+
 .mock-chat-btn {
     font-size: 20px;
 }
